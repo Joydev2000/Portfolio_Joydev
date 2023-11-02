@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .boxone {
+            background-color: aquamarine;
+            position: relative; 
+            width: 300px;
+            height: 300px;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: blueviolet;
+            z-index: 1;
+        }
+        .pageone {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            gap: 10px;
+        }
+        #dott {
+            height: 30px;
+            width: 30px;
+            background-color: black;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%) scale(1.2);
+            pointer-events: none;
+            z-index: 1; /* Cursor is initially above all elements */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Visibility</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div id="dott"></div>
+    <div class="main">
+        <div class="pageone one">
+            <div class="boxone"></div>
+            <div class="box"></div>
+            <div class="boxone">
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium impedit
+                 maiores eaque sapiente repellendus quis, aliquid cumque blanditiis illo dolor,
+                  culpa inventore eius delectus commodi, dicta deserunt qui optio nobis!</p>
+            </div>
+            <div class="box"></div>
+        </div>
+        <div class="pageone two">
+            <div class="box"></div>
+            <div class="boxone"></div>
+            <div class="box"></div>
+            <div class="boxone"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('.main'),
+            smooth: true
+        });
+
+        var circel = document.getElementById("dott");
+
+        document.addEventListener("mousemove", function (dets) {
+            gsap.to(circel, {
+                left: dets.clientX,
+                top: dets.clientY,
+                duration: 0.3,
+            });
+
+            // Determine whether the cursor is over a 'box' element
+            var isOverBox = Array.from(document.querySelectorAll('.box')).some(box => {
+                const boxRect = box.getBoundingClientRect();
+                return (
+                    dets.clientX >= boxRect.left &&
+                    dets.clientX <= boxRect.right &&
+                    dets.clientY >= boxRect.top &&
+                    dets.clientY <= boxRect.bottom
+                );
+            });
+
+            // Adjust the z-index based on whether the cursor is over a 'box' element
+            if (isOverBox) {
+                circel.style.zIndex = -1; // Cursor goes below 'box' elements
+            } else {
+                circel.style.zIndex = 1;  // Cursor is above all other elements
+            }
+        });
+    </script>
+</body>
+</html>
