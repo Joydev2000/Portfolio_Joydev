@@ -23,13 +23,11 @@ body {
 #cursor {
     height: 30px;
     width: 30px;
-    background-color:var(--h_color);
+    background-color: #c280a6d0;
     border-radius: 50%;
-    position:fixed;
-    transform: translate(-50%, -50%) scale(1.2);
+    position: fixed;
+    transform: translate(-50%, -50%) scale(1);
     pointer-events: none;
-	
-	
 }
 
 .pageone{
@@ -191,6 +189,8 @@ body {
 }
 
 .buttonland {
+	position: relative;
+	z-index: 9;
 	display: flex;
 	justify-content: space-between;
 	width: 40%;
@@ -260,12 +260,12 @@ box-shadow: var(--boxshadow);
 } */
 
 .title{
-   
 	height: 60px; 
 	overflow: hidden;
 	background-color:  linear-gradient(145deg, #e2e8ec, #ffffff);
     box-shadow: var(--boxshadow);
 	border-radius: 10px;
+	
 	 
 	 
 	 

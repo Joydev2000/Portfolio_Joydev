@@ -56,22 +56,22 @@ document.addEventListener("mousemove", function (dets) {
     });
 
     
-    var isOverBox = Array.from(document.querySelectorAll('.up')).some(up => {
-        const boxRect = up.getBoundingClientRect();
-        return (
-            dets.clientX >= boxRect.left &&
-            dets.clientX <= boxRect.right &&
-            dets.clientY >= boxRect.top &&
-            dets.clientY <= boxRect.bottom
-        );
-    });
+    // var isOverBox = Array.from(document.querySelectorAll('.up')).some(up => {
+    //     const boxRect = up.getBoundingClientRect();
+    //     return (
+    //         dets.clientX >= boxRect.left &&
+    //         dets.clientX <= boxRect.right &&
+    //         dets.clientY >= boxRect.top &&
+    //         dets.clientY <= boxRect.bottom
+    //     );
+    // });
 
-    // Adjust the z-index based on whether the cursor is over a 'box' element
-    if (isOverBox) {
-        circel.style.zIndex = -1; // Cursor goes below 'box' elements
-    } else {
-        circel.style.zIndex = 10;  // Cursor is above all other elements
-    }
+    // // Adjust the z-index based on whether the cursor is over a 'box' element
+    // if (isOverBox) {
+    //     circel.style.zIndex = -1; // Cursor goes below 'box' elements
+    // } else {
+    //     circel.style.zIndex = 10;  // Cursor is above all other elements
+    // }
 });
 
 
@@ -97,7 +97,7 @@ document.addEventListener("mousemove", function (dets) {
 // });
  
 
-var frame = document.querySelector(".title");
+var frame = document.querySelectorAll(".title");
         
     
 
