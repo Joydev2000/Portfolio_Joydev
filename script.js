@@ -97,6 +97,60 @@ document.addEventListener("mousemove", function (dets) {
 // });
  
 
+var frame = document.querySelector(".title");
+        
+    
+
+  frame.addEventListener("mousemove", function (dets) {
+  gsap.to("#cursor", {
+      transform: "translate(-50%,-50%) scale(6)"
+  });
+
+  const lerp = (x, y, a) => x * (1 - a) + y * a;
+  var dims = frame.getBoundingClientRect();
+  var xstart = dims.x;
+  var ystart = dims.y;
+  var xend = dims.x + dims.width;
+  var yend = dims.y + dims.height;
+  var zerooneX = gsap.utils.mapRange(xstart, xend, 0, 1, dets.x);
+  var zerooneY = gsap.utils.mapRange(ystart, yend, 0, 1, dets.y);
+
+  gsap.to(frame, {
+      x: lerp(-50, 50, zerooneX),
+      y: lerp(-50, 50, zerooneY)
+  });
+});
+
+
+
+// frame.addEventListener("mouseenter", function () {
+
+//       gsap.to(".title span", {
+//           color: "blue",
+//           duration: .1
+//       })
+//   });
+
+
+  frame.addEventListener("mouseleave", function () {
+      gsap.to("#cursor", {
+          transform: "translate(-50%,-50%) scale(1)"
+      })
+      gsap.to(".title span", {
+          // color: "black",
+          duration: .1
+      })
+      gsap.to(frame, {
+          x: 0,
+          y:0
+
+      });
+
+
+  });
+
+
+
 }
 mousemoveEvent();
 

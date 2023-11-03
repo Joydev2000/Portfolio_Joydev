@@ -25,10 +25,10 @@ body {
     width: 30px;
     background-color:var(--h_color);
     border-radius: 50%;
-    position:absolute;
+    position:fixed;
     transform: translate(-50%, -50%) scale(1.2);
     pointer-events: none;
-	z-index: 1;
+	
 	
 }
 
@@ -193,11 +193,10 @@ body {
 .buttonland {
 	display: flex;
 	justify-content: space-between;
-	width: 345px;
+	width: 40%;
+	margin-top: 40px;
+	/* background-color: #0A66C2; */
 	
-	
-
-
 }
 
 /* .buttonland a {
@@ -214,11 +213,10 @@ body {
 	box-shadow: var(--boxshadow);
 	font-size: 19px;
 	overflow: hidden;
-	/* z-index: 1; */
+	z-index: 1; 
 	text-decoration: none;
 	margin-top: 40px;
 
-}
 
 .buttonland a:nth-child(2) {
 	color: var(--h_color);
@@ -261,6 +259,43 @@ box-shadow: var(--boxshadow);
 
 } */
 
+.title{
+   
+	height: 60px; 
+	overflow: hidden;
+	background-color:  linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: var(--boxshadow);
+	border-radius: 10px;
+	 
+	 
+	 
+  }
+  
+
+  .title span{
+	  height: 60px;
+	  font-size: 19px;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 padding:  0px 10px;
+	 text-align: center;
+	 transform: translateY(0px);
+	  transition: .8s ease;
+	  cursor: pointer;
+	  font-weight: 500;
+	  color: var(--h_color);
+	
+	  
+	 
+  }
+.title:hover span{
+	  transform: translateY(-60px);
+	  color: var(--color);
+  }
+  /* .title:hover{
+	box-shadow: none;
+} */
 .icon {
 	position: relative;
 	top: 150px;
