@@ -45,17 +45,19 @@ const scroll = new LocomotiveScroll({
 });
 
 function mousemoveEvent(){
+
   var circel = document.getElementById("cursor");
-       
   var frames = document.querySelectorAll(".frame");
 
-window.addEventListener("mousemove", function (dets) {
+  window.addEventListener("mousemove", function (dets) {
     gsap.to(circel, {
-        left: dets.x,
-        top: dets.y,
-        duration: 0.3,
-        
-    });
+        x: dets.x,
+        y: dets.y,
+        duration: .2,
+        ease: Expo
+    })
+});
+
 
     
     // var isOverBox = Array.from(document.querySelectorAll('.up')).some(up => {
@@ -74,7 +76,7 @@ window.addEventListener("mousemove", function (dets) {
     // } else {
     //     circel.style.zIndex = 10;  // Cursor is above all other elements
     // }
-});
+
 
 
 
