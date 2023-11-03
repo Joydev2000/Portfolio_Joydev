@@ -200,7 +200,7 @@ body {
 
 }
 
-.buttonland a {
+/* .buttonland a {
 	background: var(--boxBackground);
 	position: relative;
 	padding: 12px 28px;
@@ -259,7 +259,7 @@ box-shadow: var(--boxshadow);
 .buttonland a:hover::before {
 	width: 110%;
 
-}
+} */
 
 .icon {
 	position: relative;
