@@ -458,9 +458,10 @@ box-shadow: var(--boxshadow);
 }
 
 .box_content i{
-	font-size: 60px;
+	font-size: 50px;
 	color: var(--h_color);
 	transition: .2s ease-in-out;
+	font-weight: 200;
 }
 .box_content h3{
 	color: var(--color);
@@ -472,6 +473,7 @@ box-shadow: var(--boxshadow);
 	width: 100%;
 	line-height: 30px;
 	transition: .2s ease-in-out;
+	font-weight: 300;
 	
 }
 .box_content a{
