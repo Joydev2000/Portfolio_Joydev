@@ -47,36 +47,91 @@ const scroll = new LocomotiveScroll({
 function mousemoveEvent(){
 
   var circel = document.getElementById("cursor");
+  const lerp = (x, y, a) => x * (1 - a) + y * a;
   var frames = document.querySelectorAll(".frame");
+  var boxes = document.querySelectorAll(".box");
+
 
   window.addEventListener("mousemove", function (dets) {
     gsap.to(circel, {
-        x: dets.x,
-        y: dets.y,
-        duration: .2,
-        ease: Expo
-    })
-});
+      x: dets.x,
+      y: dets.y,
+      duration: .2,
+      ease: Expo
+    });
+
+    var isOverBox = Array.from(document.querySelectorAll('.up')).some(up => {
+      const boxRect = up.getBoundingClientRect();
+      return (
+        dets.clientX >= boxRect.left &&
+        dets.clientX <= boxRect.right &&
+        dets.clientY >= boxRect.top &&
+        dets.clientY <= boxRect.bottom
+      );
+    });
+
+    // Adjust the z-index based on whether the cursor is over a 'box' element
+    if (isOverBox) {
+      circel.style.zIndex = -1; // Cursor goes below 'box' elements
+    } else {
+      circel.style.zIndex = 10;  // Cursor is above all other elements
+    }
+
+  });
+
+  frames.forEach(frame => {
+
+    frame.addEventListener("mousemove", function (dets) {
+
+      var dims = frame.getBoundingClientRect();
+      var xstart = dims.x;
+      var ystart = dims.y;
+      var xend = dims.x + dims.width;
+      var yend = dims.y + dims.height;
+      var zerooneX = gsap.utils.mapRange(xstart, xend, 0, 1, dets.clientX);
+      var zerooneY = gsap.utils.mapRange(ystart, yend, 0, 1, dets.clientY);
+
+      gsap.to(frame, {
+        x: lerp(-50, 50, zerooneX),
+        y: lerp(-50, 50, zerooneY)
+      });
+
+      gsap.to(circel, {
+        scale: 6
+      });
+    });
+
+    frame.addEventListener("mouseleave", function (dets) {
+      gsap.to(frame, {
+        x: 0,
+        y: 0
+
+      });
+      gsap.to(circel, {
+        scale: 1
+      });
+    });
+  });
+
+  boxes.forEach(box => {
+    box.addEventListener("mousemove", function () {
+      gsap.to(circel, {
+        scale: 0
+      });
+    });
+
+    box.addEventListener("mouseleave", function () {
+      gsap.to(circel, {
+        scale: 1
+      });
+    });
 
 
-    
-    // var isOverBox = Array.from(document.querySelectorAll('.up')).some(up => {
-    //     const boxRect = up.getBoundingClientRect();
-    //     return (
-    //         dets.clientX >= boxRect.left &&
-    //         dets.clientX <= boxRect.right &&
-    //         dets.clientY >= boxRect.top &&
-    //         dets.clientY <= boxRect.bottom
-    //     );
-    // });
+  });
 
-    // // Adjust the z-index based on whether the cursor is over a 'box' element
-    // if (isOverBox) {
-    //     circel.style.zIndex = -1; // Cursor goes below 'box' elements
-    // } else {
-    //     circel.style.zIndex = 10;  // Cursor is above all other elements
-    // }
 
+
+   
 
 
 
