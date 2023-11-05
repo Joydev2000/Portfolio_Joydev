@@ -433,7 +433,7 @@ box-shadow: var(--boxshadow);
 	flex-wrap: wrap;
 	flex-direction: row;
 	/* background-color: #d11414; */
-	justify-content: space-between;
+	justify-content: center;
 }
 .box{
 	flex-wrap: wrap;
