@@ -442,7 +442,7 @@ box-shadow: var(--boxshadow);
 	position: relative;
 	z-index: 1;
 	max-height: 500px;
-	min-width: 400px;
+	min-width: 300px;
 }
 .feat_box .box{
 	background: var(--boxBackground);
