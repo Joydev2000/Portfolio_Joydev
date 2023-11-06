@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
@@ -103,5 +103,92 @@
             }
         });
     </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       
+
+body {
+  margin: 15px;
+}
+
+/* text recolor */
+h1, p, a {
+  color: #4DC9C9 ;
+}
+
+/* button recolor */
+.nav-pills > li.active > a, .btn-primary {
+  background-color: #6C6C6C ;
+  border-color: #6C6C6C ;
+  border-radius: 25px; 
+}
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" ng-app="tabApp">
+        <div class="row" ng-controller="TabController">
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                 <li ng-class="{ active: isSet(1) }">
+                    <a href ng-click="setTab(1)">Home</a>
+                 </li>
+                 <li ng-class="{ active: isSet(2) }">
+                    <a href ng-click="setTab(2)">Profile</a>
+                 </li>
+                 <li >
+                    <a  href ng-click="setTab(3)">Messages</a>
+                 </li>
+               </ul>
+            </div>
+          <div class="col-md-8">
+                <div class="jumbotron">
+                 <div ng-show="isSet(1)">
+                    <h1>Home page</h1>
+                    <p>Welcome to the website!</p>
+                  </div>
+
+                  <div ng-show="isSet(2)">
+                <h1>Profile page</h1>
+                <p>Profile information</p>
+               </div>
+               
+              <div ng-show="isSet(3)">
+                <h1>Messages</h1>
+                <p> Some messages </p>
+               </div>
+            </div>
+        </div>
+      </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+      <script>
+        angular.module('tabApp', [])
+  .controller('TabController', ['$scope', function($scope) {
+    $scope.tab = 1;
+
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
+
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+}]);
+
+
+      </script>
 </body>
 </html>
