@@ -49,7 +49,7 @@ function mousemoveEvent(){
   var circel = document.getElementById("cursor");
   const lerp = (x, y, a) => x * (1 - a) + y * a;
   var frames = document.querySelectorAll(".frame");
-  var boxes = document.querySelectorAll(".box");
+  var boxes = document.querySelectorAll(".boxun");
 
 
   window.addEventListener("mousemove", function (dets) {
