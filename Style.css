@@ -557,22 +557,59 @@ box-shadow: var(--boxshadow);
 	font-size: 3vw;
 	letter-spacing: 2px;
 }
+.feat_box_two{
+	display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* min-value will be the miniuma value which will work in mobole resposive*/
+		/* grid-template-rows: 350px 350px; its not requaired because i used padding on box */ 
+    gap: 50px;
+	margin-top: 50px;
+	transition: .2s linear;	
+	position: relative;
+	z-index: 1;
+	flex-wrap: wrap;
+	flex-direction: row;
+	/* background-color: #d11414; */
+	justify-content: center;
+}
+.box_two{
+	flex-wrap: wrap;
+	/* max-width: 320px; */
+	flex: 30%;
+	position: relative;
+	z-index: 1;
+	max-height: 500px;
+	min-width: 280px;
+}
+.feat_box_two .box_two{
+	background: var(--boxBackground);
+	box-shadow: var(--boxshadow);
+	border-radius: 10px;
+	padding: 40px 20px;
+	transition: .8s;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	
+}
 .port_content{
  position: relative;
  z-index: 2;
  width: 90%;
  height: 90%;
- background-color: green;
+ /* background-color: green; */
 }
 .port_content .img{
 	margin: auto;
 	height: 200px;
 	
-	background-color: red;
+	/* background-color: red; */
 	
 }
 .port_content .img img{
-	display: none;
+	/* display: none; */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 .short{
 	display: flex;
