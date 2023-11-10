@@ -1,196 +1,80 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    
-    <style>
-        .box {
-            width: 300px;
-            height: 300px;
-            background-color: red;
-        }
-        .boxone {
-            background-color: aquamarine;
-            position: relative; 
-            width: 300px;
-            height: 300px;
-        }
-        .header {
-            position: relative;
-            width: 100%;
-            height: 150px;
-            background-color: blueviolet;
-            z-index: 1;
-        }
-        .pageone {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            gap: 10px;
-        }
-        #dott {
-            height: 30px;
-            width: 30px;
-            background-color: black;
-            border-radius: 50%;
-            position: fixed;
-            transform: translate(-50%, -50%) scale(1.2);
-            pointer-events: none;
-            z-index: 1; /* Cursor is initially above all elements */
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursor Visibility</title>
-</head>
-<body>
-    <div class="header"></div>
-    <div id="dott"></div>
-    <div class="main">
-        <div class="pageone one">
-            <div class="boxone"></div>
-            <div class="box"></div>
-            <div class="boxone">
-               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium impedit
-                 maiores eaque sapiente repellendus quis, aliquid cumque blanditiis illo dolor,
-                  culpa inventore eius delectus commodi, dicta deserunt qui optio nobis!</p>
-            </div>
-            <div class="box"></div>
-        </div>
-        <div class="pageone two">
-            <div class="box"></div>
-            <div class="boxone"></div>
-            <div class="box"></div>
-            <div class="boxone"></div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('.main'),
-            smooth: true
-        });
-
-        var circel = document.getElementById("dott");
-
-        document.addEventListener("mousemove", function (dets) {
-            gsap.to(circel, {
-                left: dets.clientX,
-                top: dets.clientY,
-                duration: 0.3,
-            });
-
-            // Determine whether the cursor is over a 'box' element
-            var isOverBox = Array.from(document.querySelectorAll('.box')).some(box => {
-                const boxRect = box.getBoundingClientRect();
-                return (
-                    dets.clientX >= boxRect.left &&
-                    dets.clientX <= boxRect.right &&
-                    dets.clientY >= boxRect.top &&
-                    dets.clientY <= boxRect.bottom
-                );
-            });
-
-            // Adjust the z-index based on whether the cursor is over a 'box' element
-            if (isOverBox) {
-                circel.style.zIndex = -1; // Cursor goes below 'box' elements
-            } else {
-                circel.style.zIndex = 1;  // Cursor is above all other elements
-            }
-        });
-    </script>
-</body>
-</html> -->
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html ng-app="myApp">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            margin: 15px;
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
         }
 
-        /* text recolor */
-        h1,
-        p,
-        a {
-            color: #4DC9C9;
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
         }
 
-        /* button recolor */
-        .nav-pills>li.active>a,
-        .btn-primary {
-            background-color: #6C6C6C;
-            border-color: #6C6C6C;
-            border-radius: 25px;
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
         }
     </style>
-    <title>Document</title>
 </head>
+<body ng-controller="TabController">
+    <h2>Tabs</h2>
+    <p>Click on the buttons inside the tabbed menu:</p>
 
-<body>
-    <div class="container" ng-app="tabApp">
-        <div class="row" ng-controller="TabController">
-            <div class="col-md-2">
-                <ul class="nav nav-pills nav-stacked">
-                    <li ng-class="{ active: isSet(1) }">
-                        <a href ng-click="setTab(1)">Home</a>
-                    </li>
-                    <li ng-class="{ active: isSet(2) }">
-                        <a href ng-click="setTab(2)">Profile</a>
-                    </li>
-                    <li ng-class="{ active: isSet(3) }">
-                        <a   href ng-click="setTab(3)">Messages</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-8">
-                <div class="jumbotron">
-                    <div ng-show="isSet(1)">
-                        <h1>Home page</h1>
-                        <p>Welcome to the website!</p>
-                    </div>
-
-                    <div ng-show="isSet(2)">
-                        <h1>Profile page</h1>
-                        <p>Profile information</p>
-                    </div>
-
-                    <div ng-show="isSet(3)">
-                        <h1>Messages</h1>
-                        <p> Some messages </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="tab">
+        <button class="tablinks" ng-click="openTab('London')">London</button>
+        <button class="tablinks" ng-click="openTab('Paris')">Paris</button>
+        <button class="tablinks" ng-click="openTab('Tokyo')">Tokyo</button>
     </div>
+
+    <div id="London" class="tabcontent" ng-show="isActive('London')">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent" ng-show="isActive('Paris')">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent" ng-show="isActive('Tokyo')">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script>
-        angular.module('tabApp', [])
-            .controller('TabController', ['$scope', function ($scope) {
-                $scope.tab = 1;
+        var app = angular.module('myApp', []);
 
-                $scope.setTab = function (newTab) {
-                    $scope.tab = newTab;
-                };
+        app.controller('TabController', function ($scope) {
+            $scope.activeTab = 'London';
 
-                $scope.isSet = function (tabNum) {
-                    return $scope.tab === tabNum;
-                };
-            }]);
+            $scope.openTab = function (tabName) {
+                $scope.activeTab = tabName;
+            };
 
-
+            $scope.isActive = function (tabName) {
+                return $scope.activeTab === tabName;
+            };
+        });
     </script>
 </body>
-
 </html>
