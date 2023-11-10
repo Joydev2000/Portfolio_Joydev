@@ -16,9 +16,11 @@
 	font-family: 'Poppins', sans-serif;
 	box-sizing: border-box;
 }
+
 body {
 	background: var(--background);
 }
+
 hr{
 	width: 75%;
 	margin: auto;
@@ -39,10 +41,6 @@ hr{
 	opacity: 1;
    
 }
-
-
-
-
 
 .header {
     position: sticky;
@@ -79,7 +77,6 @@ hr{
 	background: linear-gradient(145deg, #e2e8ec, #ffffff);
 	color: #3c3e41;
 } */
-
 
 .navbar ul a {
 	padding-right: 50px;
@@ -155,18 +152,22 @@ hr{
     width: 600px;
     overflow: hidden;
 }
+
 .container .text{
     position: relative;
     font-size: 40px;
 }
+
 .container .text.first-text{
     color: var(--color);
 	font-weight: 600;
 }
+
 .sec-text{
 	font-weight: 500;
 	margin-left: 15px;
 }
+
 .text.sec-text:before{
     content: "";
     position: absolute;
@@ -178,6 +179,7 @@ hr{
     border-left: 2px solid var(--h_color);
     animation: animate 4s infinite;
 }
+
 @keyframes animate{
     40%, 60%{
         left: calc(100% + 4px);
@@ -263,7 +265,9 @@ box-shadow: var(--boxshadow);
 .buttonland a:hover::before {
 	width: 110%;
 
-} */ .frame {
+} */ 
+
+.frame {
  	height: 60px;
  	overflow: hidden;
  	color: black;
@@ -288,13 +292,16 @@ box-shadow: var(--boxshadow);
 	color: var(--h_color);
 
  }
+
   .frame:hover span{
 	  transform: translateY(-60px);
 	  color: var(--color);
   }
+
   .frame:hover{
 	box-shadow: none;
 }
+
 .icon {
 	position: relative;
 	top: 150px;
@@ -441,6 +448,7 @@ box-shadow: var(--boxshadow);
 	/* background-color: #d11414; */
 	justify-content: center;
 }
+
 .box{
 	flex-wrap: wrap;
 	/* max-width: 320px; */
@@ -450,6 +458,7 @@ box-shadow: var(--boxshadow);
 	max-height: 500px;
 	min-width: 280px;
 }
+
 .feat_box .box{
 	background: var(--boxBackground);
 	box-shadow: var(--boxshadow);
@@ -461,6 +470,7 @@ box-shadow: var(--boxshadow);
 	justify-content: center;
 	
 }
+
 .box::after{
 	content: '';
 	position: absolute;
@@ -473,9 +483,11 @@ box-shadow: var(--boxshadow);
 	border-radius: 10px;
 	opacity: 0;
 }
+
 .box:hover::after{
   opacity: 1;
 }
+
 .box:hover .cursor {
 	display: none;
   }
@@ -502,11 +514,13 @@ box-shadow: var(--boxshadow);
 	transition: .2s ease-in-out;
 	font-weight: 200;
 }
+
 .box_content h3{
 	color: var(--color);
 	font-weight: 500;
 	transition: .2s ease-in-out;
 }
+
 .box_content p{
 	font-size: 16px;
 	width: 100%;
@@ -515,6 +529,7 @@ box-shadow: var(--boxshadow);
 	font-weight: 300;
 	
 }
+
 .box_content a{
 	text-decoration: none;
 	font-size: 10px;
@@ -522,6 +537,7 @@ box-shadow: var(--boxshadow);
     transition: .2s ease-in-out;
 	
 }
+
 .box:hover .box_content a {
 	opacity: 1;
 	

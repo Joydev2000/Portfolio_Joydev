@@ -131,10 +131,6 @@ function mousemoveEvent(){
 
 
 
-   
-
-
-
 // var aElements = document.querySelectorAll(".navbar ul a");
 // aElements.forEach(function(aElement) {
 //     aElement.addEventListener("mousemove", function () {
