@@ -1,80 +1,58 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
-    <style>
-        .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
 
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-            font-size: 17px;
-        }
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
 
-        .tab button:hover {
-            background-color: #ddd;
-        }
 
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-    </style>
+</style>
 </head>
-<body ng-controller="TabController">
-    <h2>Tabs</h2>
-    <p>Click on the buttons inside the tabbed menu:</p>
+<body>
+    <div ng-app="TabApp" ng-controller="TabController as tabCtrl">
+        <ul class="nav nav-tabs">
+          <li ng-class="{active: tabCtrl.isSelected(1)}"><a ng-click="tabCtrl.selectTab(1)" href="#">Tab 1</a></li>
+          <li ng-class="{active: tabCtrl.isSelected(2)}"><a ng-click="tabCtrl.selectTab(2)" href="#">Tab 2</a></li>
+          <li ng-class="{active: tabCtrl.isSelected(3)}"><a ng-click="tabCtrl.selectTab(3)" href="#">Tab 3</a></li>
+        </ul>
+        <div class="tab">
+            <div ng-show="tabCtrl.isSelected(1)">
+                <h3>Tab 1 Coent</h3>
+                <p>This is the content for Tab 1.</p>
+              </div>
+              <div ng-show="tabCtrl.isSelected(2)">
+                <h3>Tab 2 Conte is the</h3><p> content for Tab 2.</p>
+              </div>
+              <div ng-show="tabCtrl.isSelected(3)">
+                <h3>Tab 3 Coent</h3>
+                <p>This isontent for Tab 3.</p>
+              </div>
+            </div>
+        </div>
+        
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script>
+var app = angular.module('TabApp', []);
 
-    <div class="tab">
-        <button class="tablinks" ng-click="openTab('London')">London</button>
-        <button class="tablinks" ng-click="openTab('Paris')">Paris</button>
-        <button class="tablinks" ng-click="openTab('Tokyo')">Tokyo</button>
-    </div>
+app.controller('TabController', function() {
+  this.selectedTab = 1;
 
-    <div id="London" class="tabcontent" ng-show="isActive('London')">
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
-    </div>
+  this.selectTab = function(tabNumber) {
+    this.selectedTab = tabNumber;
+  };
 
-    <div id="Paris" class="tabcontent" ng-show="isActive('Paris')">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
+  this.isSelected = function(tabNumber) {
+    return this.selectedTab === tabNumber;
+  };
+});
 
-    <div id="Tokyo" class="tabcontent" ng-show="isActive('Tokyo')">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script>
-        var app = angular.module('myApp', []);
-
-        app.controller('TabController', function ($scope) {
-            $scope.activeTab = 'London';
-
-            $scope.openTab = function (tabName) {
-                $scope.activeTab = tabName;
-            };
-
-            $scope.isActive = function (tabName) {
-                return $scope.activeTab === tabName;
-            };
-        });
-    </script>
+</script>
+   
 </body>
-</html>
+</html> 
