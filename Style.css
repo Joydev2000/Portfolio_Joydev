@@ -7,9 +7,6 @@
     --color:#3c3e41;
     --h_color:#ff014f;  
 }
-
-
-
 * {
 	margin: 0;
 	padding: 0;
@@ -412,7 +409,6 @@ box-shadow: var(--boxshadow);
 	width: 75%;
 	margin: auto;
 	margin-top: 100px;
-	
 	position: relative;
 	
 }
@@ -425,9 +421,8 @@ box-shadow: var(--boxshadow);
 	flex-direction: column;
 	line-height: 50px;
 }
-	
-
 .secondpage h3 span {
+	font-family: 'Roboto', sans-serif;
 	font-size: 60px;
 	font-weight: 600;
 	margin-bottom: 20px;
@@ -558,12 +553,10 @@ box-shadow: var(--boxshadow);
 .box:hover .box_content i, .box:hover .box_content h3, .box:hover .box_content p {
     color: var(--background);
 }
-
-
 .thirdpage{
 	width: 75%;
 	margin: auto;
-	margin-top: 150px;
+	margin-top: 100px;
 }
 .thirdpage h2{
 	text-align: center;
@@ -574,6 +567,7 @@ box-shadow: var(--boxshadow);
 	
 }
 .thirdpage h4{
+	font-family: 'Roboto', sans-serif;
     text-align: center;
 	font-weight: 700;
 	font-size: 3vw;
@@ -626,10 +620,7 @@ box-shadow: var(--boxshadow);
 	margin: auto;
 	height: 80%;
 	overflow: hidden;
-
-	
 	/* background-color: red; */
-	
 }
 .port_content .img img{
 	/* display: none; */
@@ -641,7 +632,6 @@ box-shadow: var(--boxshadow);
 .port_content .img:hover img{
 	scale: 1.2;
 }
-
 .short{
 	display: flex;
 	justify-content: space-between;
@@ -664,10 +654,23 @@ box-shadow: var(--boxshadow);
 	color: #1e2125;
 	font-size: 22px;
 }
-
-.fourth_page{
+.fourthpage{
 	width: 75%;
 	margin: auto;
-	padding-top: 100px;
+	margin-top: 100px;
 	height: 100vh;
+}
+.fourthpage h2{
+	text-align: center;
+	color: var(--h_color);
+	font-weight: 300;
+	font-size: 22px;
+	letter-spacing: 2px;
+}
+.fourthpage h4{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+	font-weight: 700;
+	font-size: 3vw;
+	letter-spacing: 2px;
 }
