@@ -621,6 +621,7 @@ box-shadow: var(--boxshadow);
 	margin: auto;
 	height: 80%;
 	overflow: hidden;
+	border-radius: 10px;
 	/* background-color: red; */
 }
 .port_content .img img{
@@ -693,6 +694,14 @@ box-shadow: var(--boxshadow);
 	align-items: center;
 	cursor: pointer;
 	font-size: 1vw;
+	transition: .2s;
+}
+.tablinks:hover{
+	background-color: var(--background);
+	box-shadow: var(--boxshadow);
+	border-radius: 10px;
+	color: var(--h_color);
+	
 }
 .active{
 	background-color: var(--background);
