@@ -727,7 +727,7 @@ box-shadow: var(--boxshadow);
 	content: '';
 	position: absolute;
 	width: 6px;
-	background-color: var(--h_color);
+	background-color: #d9dee2;
 	top: 0;
 	bottom: 0;
 	left: 31px;
@@ -743,6 +743,7 @@ box-shadow: var(--boxshadow);
 	padding-left: 70px;
 	padding-right: 25px;
 	margin-top: 40px;
+	
   }
   
   /* The circles on the timeline */
@@ -772,16 +773,14 @@ box-shadow: var(--boxshadow);
 .left::before {
 	position: absolute;
     content: "";
-    width: 28px;
+    width: 80px;
     height: 5px;
-    
-    top: 63px;
-    transform: translateY(-7px);
-    background: #1b1c1d;
-    z-index: 0;
+    top: 17px;
+	left:30px;
+    background: #d9dee2;
+   
 	
-	/* border-width: 15px 15px 15px 0;
-	border-color: transparent rgb(244, 141, 141) transparent transparent; */
+	
   }
   .left::after{
 	left: 17px;
@@ -792,5 +791,6 @@ box-shadow: var(--boxshadow);
 	box-shadow: var(--boxshadow);
 	position: relative;
 	border-radius: 6px;
+	z-index: 999;
   }
   
