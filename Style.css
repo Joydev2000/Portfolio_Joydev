@@ -728,7 +728,7 @@ box-shadow: var(--boxshadow);
 	position: absolute;
 	width: 6px;
 	background-color: #d9dee2;
-	top: 0;
+	top: 1px;
 	bottom: 0;
 	left: 31px;
 	/* margin-left: -3px; */
@@ -778,19 +778,16 @@ box-shadow: var(--boxshadow);
 .containerd::before {
 	position: absolute;
     content: "";
-    width: 50px;
+    width: 49px;
     height: 5px;
     top: 12px;
-	left: 20px;
+	left: 21px;
     background: #d9dee2;
-	z-index: 0;
+	z-index: 1;
    
 	
 	
   }
-  .left::after{
-	left: 21px;
-	}
 .content {
 	padding: 20px 30px;
 	background-color:linear-gradient(145deg, #e2e8ec, #ffffff);;
