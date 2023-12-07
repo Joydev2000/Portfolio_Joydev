@@ -1,12 +1,15 @@
 :root{
 	
 	--background:#ECF0F3;
-	--hBoxBackground:  linear-gradient(145deg, #ff014f, #d11414);
+	--hBoxBackground:linear-gradient(145deg, #ff014f, #d11414);
 	--boxshadow:5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
 	--boxBackground:linear-gradient(145deg, #e2e8ec, #ffffff);
     --color:#3c3e41;
-    --h_color:#ff014f;  
+    --h_color:#ff014f;
+	--headingColor:#1E2125;
+	
 }
+
 * {
 	margin: 0;
 	padding: 0;
@@ -653,7 +656,7 @@ box-shadow: var(--boxshadow);
 .port_content h3{
 	padding-top: 10px;
 	font-weight: 600;
-	color: #1e2125;
+	color:var(--headingColor);
 	font-size: 22px;
 }
 .fourthpage{
@@ -679,7 +682,7 @@ box-shadow: var(--boxshadow);
 .tab{
 	width: 100%;
 	display: flex;
-	background-color: var(--boxBackground);
+	background: var(--boxBackground);
 	box-shadow: var(--boxshadow);
 	height: 100px;
 	justify-content: space-between;
@@ -697,24 +700,27 @@ box-shadow: var(--boxshadow);
 	transition: .2s;
 }
 .tablinks:hover{
-	background-color: var(--background);
+	background:var(--boxBackground);
 	box-shadow: var(--boxshadow);
 	border-radius: 10px;
 	color: var(--h_color);
 	
 }
 .active{
-	background-color: var(--background);
+	background:var(--boxBackground);
 	box-shadow: var(--boxshadow);
 	border-radius: 10px;
 	color: var(--h_color);
 }
-
+.resume_content{
+	width: 100%;
+	height:100vh;
+}
   .maineducation{
 	/* background-color: red; */
 	display: flex;
 	justify-content:space-between;
-	gap:40px;
+	gap:2.5vw;
   }
 .professional_quali{
 	/* background-color: #7f2929; */
@@ -730,12 +736,20 @@ box-shadow: var(--boxshadow);
 	font-size: 40px;
 	text-align: left;
 	letter-spacing: -1px;
-	font-weight: 500;
+	font-weight: 600;
 	margin-top: 40px;
-	color: var(--color);
+	color: var(--headingColor);
+	
+}
+.professional_quali .ed_title{
+	font-size: 40px;
+	text-align: left;
+	letter-spacing: -1px;
+	font-weight: 600;
+	margin-top: 40px;
+	color: var(--headingColor);
 }
 .timeline {
-	height: 100%;
 	position: relative;
 	margin: 0 auto;
 	margin-top: 40px;
@@ -758,9 +772,7 @@ box-shadow: var(--boxshadow);
   .containerd{
 	position: relative;
 	padding-left: 70px;
-	padding-right: 25px;
-	
-	
+	width: 90%;
   }
   .containerd:not(:first-child){
 	margin-top: 40px;
@@ -772,7 +784,7 @@ box-shadow: var(--boxshadow);
 	position: absolute;
 	width: 15px;
 	height: 15px;
-	background-color: #ecf0f3;
+	background:var(--boxBackground);
 	border: 5px solid #d9dee2;
 	top: 1px;
 	left: -9px;
@@ -780,21 +792,11 @@ box-shadow: var(--boxshadow);
 	z-index: 1;
 	transition: .5s ease all;
 	
-	
   }
   .containerd:hover::after{
 	background-color: var(--h_color);
   }
 
-  .left img{
-	width: 100%;
-  }
-
-
-.right img{
-	width: 100%;
-  }
-  
 .containerd::before {
 	position: absolute;
     content: "";
@@ -805,12 +807,10 @@ box-shadow: var(--boxshadow);
     background: #d9dee2;
 	z-index: 1;
    
-	
-	
   }
 .content {
-	padding: 20px 30px;
-	background-color:linear-gradient(145deg, #e2e8ec, #ffffff);;
+	padding: 50px 30px;
+	background:var(--boxBackground);
 	box-shadow:5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
 	position: relative;
 	border-radius: 6px;
@@ -818,6 +818,53 @@ box-shadow: var(--boxshadow);
 	
   }
   .content:hover{
-	background-color:var(--h_color);
+	background: var(--hBoxBackground);
   }
+  .content .heading{
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+  }
+  .content .heading p{
+	background: linear-gradient(145deg, #e2e8ec, #ffffff);
+	box-shadow: var(--boxshadow);
+	padding: 10px 25px;
+	border-radius: 10px;
+	color: var(--h_color);
+	transition: .5s ease all;
+  }
+  .content:hover .heading p{
+	background: var(--h_color);
+	box-shadow: none;
+  }
+.content .heading h2{
+	font-weight: 500;
+	letter-spacing: 0;
+	font-size: 1.3vw;
+	text-align: left;
+	transition: .5s ease all;
+	color: var(--color);
+	text-transform: capitalize;
+}
+
+.content h3{
+	font-weight: 300;
+	columns: var(--headingColor);
+	text-transform: capitalize;
+	font-size: .9vw;
+	transition: .5s ease all;
+	
+}
+.content p{
+	font-weight: 400;
+	color: var(--color);
+	padding-top: 2vh;
+	transition: .5s ease all;
+}
+.content:hover h2,
+.content:hover h3,
+.content:hover p {
+    color: var(--background);
+}
+
   
