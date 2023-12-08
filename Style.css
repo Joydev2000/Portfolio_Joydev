@@ -733,19 +733,19 @@ box-shadow: var(--boxshadow);
 
 }
 .Education_quali .ed_title{
-	font-size: 1.8vw;
+	font-size: 1.9vw;
 	text-align: left;
 	letter-spacing: -1px;
-	font-weight: 500;
+	font-weight: 600;
 	margin-top: 40px;
 	color: var(--headingColor);
 	
 }
 .professional_quali .ed_title{
-	font-size: 1.8vw;
+	font-size: 1.9vw;
 	text-align: left;
 	letter-spacing: -1px;
-	font-weight: 500;
+	font-weight: 600;
 	margin-top: 40px;
 	color: var(--headingColor);
 }
@@ -873,6 +873,50 @@ box-shadow: var(--boxshadow);
 .content:hover h3,
 .content:hover p {
     color: var(--background);
+}
+.mainskills{
+	display: flex;
+	justify-content: space-between;
+	gap: 60px;
+	/* background: #ea1414; */
+	height: 90vh;
+	width: 100%;
+}
+.code{
+	/* background: #4d259c; */
+	flex-basis: 50%;
+	padding-left: .6vw;
+}
+.code h2{
+	text-align: left;
+	margin-top: 30px;
+	font-size: .8vw;
+	font-weight: 500;
+}
+.code h3{
+	text-align: left;
+	margin-top: 10px;
+	font-size: 1.9vw;
+	font-weight: 600;
+	color: var(--headingColor);
+}
+.designe{
+	/* background: #000; */
+	flex-basis: 50%;
+	padding-left: .6vw;
+}
+.designe h2{
+	text-align: left;
+	margin-top: 30px;
+	font-size: .8vw;
+	font-weight: 500;
+}
+.designe h3{
+	text-align: left;
+	margin-top: 10px;
+	font-size: 1.9vw;
+	font-weight: 600;
+	color: var(--headingColor);
 }
 
   
