@@ -877,15 +877,16 @@ box-shadow: var(--boxshadow);
 .mainskills{
 	display: flex;
 	justify-content: space-between;
-	gap: 60px;
+	gap:0px;
 	/* background: #ea1414; */
-	height: 90vh;
+	/* height: 90vh; */
 	width: 100%;
 }
 .code{
 	/* background: #4d259c; */
-	flex-basis: 50%;
+	flex-basis: 47%;
 	padding-left: .6vw;
+	
 }
 .code h2{
 	text-align: left;
@@ -902,8 +903,9 @@ box-shadow: var(--boxshadow);
 }
 .designe{
 	/* background: #000; */
-	flex-basis: 50%;
-	padding-left: .6vw;
+	flex-basis: 47%;
+	/* padding-left: .6vw; */
+	
 }
 .designe h2{
 	text-align: left;
@@ -918,5 +920,58 @@ box-shadow: var(--boxshadow);
 	font-weight: 600;
 	color: var(--headingColor);
 }
+.skill_bar{
+	margin-top: 40px;
+	width: 98%;
+	height: 100%;
+	/* background-color: #d11414; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 10px;
+  }
+  .maincontain{
+	width: 100%;
+	height: 100%;
+  }
+  .maincontain p{
+	font-size: .8vw;
+	color: var(--color);
+	font-weight: 500;
+	margin-left: 5px;
+  }
+  
+.contain {
+	width: 100%;
+	height: 15px;
+	background: var(--boxBackground);
+	box-shadow: var(--boxshadow);
+	border-radius: 100px;
+  }
+ 
+  .skills {
+	width: 100%;
+	height: 100%;
+	text-align: right;
+	border-radius: 100px;
+  }
+  
+  .html {
+	width: 90%; 
+	background: var(--h_color);
+ }
+  .css {
+	width: 80%; 
+	background: var(--h_color);
+ }
+  .js {
+	width: 65%; 
+	background: var(--h_color);
+ }
+  .php {
+	width: 40%; 
+	background: var(--h_color);
+ }
+  
 
   

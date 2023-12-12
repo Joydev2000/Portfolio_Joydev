@@ -189,6 +189,11 @@ textAnimation();
         // markers: true
       },
     });
+    gsap.from(".html", {
+     with:0,
+        // markers: true
+      
+    });
 
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
