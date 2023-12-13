@@ -1,117 +1,27 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial;}
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-
-</style>
-</head>
-<body>
-    <div ng-app="TabApp" ng-controller="TabController as tabCtrl">
-        <ul class="nav nav-tabs">
-          <li ng-class="{active: tabCtrl.isSelected(1)}"><a ng-click="tabCtrl.selectTab(1)" href="#">Tab 1</a></li>
-          <li ng-class="{active: tabCtrl.isSelected(2)}"><a ng-click="tabCtrl.selectTab(2)" href="#">Tab 2</a></li>
-          <li ng-class="{active: tabCtrl.isSelected(3)}"><a ng-click="tabCtrl.selectTab(3)" href="#">Tab 3</a></li>
-        </ul>
-        <div class="tab">
-            <div ng-show="tabCtrl.isSelected(1)">
-                <h3>Tab 1 Coent</h3>
-                <p>This is the content for Tab 1.</p>
-              </div>
-              <div ng-show="tabCtrl.isSelected(2)">
-                <h3>Tab 2 Conte is the</h3><p> content for Tab 2.</p>
-              </div>
-              <div ng-show="tabCtrl.isSelected(3)">
-                <h3>Tab 3 Coent</h3>
-                <p>This isontent for Tab 3.</p>
-              </div>
-            </div>
-        </div>
-        
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-<script>
-var app = angular.module('TabApp', []);
-
-app.controller('TabController', function() {
-  this.selectedTab = 1;
-
-  this.selectTab = function(tabNumber) {
-    this.selectedTab = tabNumber;
-  };
-
-  this.isSelected = function(tabNumber) {
-    return this.selectedTab === tabNumber;
-  };
-});
-
-</script>
-   
-</body>
-</html>  -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <!-- Include GSAP library -->
+  <script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
+  <style>
+    .tabcontent {
+      display: none;
+    }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+    /* Add your additional CSS styles for tabs as needed */
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-</style>
+    /* Set initial width for the ".html" element */
+    .html {
+      width: 100px; /* Adjust the initial width as needed */
+    }
+  </style>
 </head>
 <body>
 
-<h2>Tabs</h2>
-<p>Click on the buttons inside the tabbed menu:</p>
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
+<!-- Your HTML content with tab structure -->
 <div id="London" class="tabcontent">
   <h3>London</h3>
   <p>London is the capital city of England.</p>
@@ -119,29 +29,43 @@ body {font-family: Arial;}
 
 <div id="Paris" class="tabcontent">
   <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+  <p>Paris is the capital of France.</p>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+<!-- Add more tab content as needed -->
+
+<!-- Tab navigation links -->
+<button class="tablinks" onclick="openCity(event, 'London')">London</button>
+<button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+<!-- Add more tab links as needed -->
 
 <script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    var cityElement = document.getElementById(cityName);
+    cityElement.style.display = "block";
+    evt.currentTarget.className += " active";
+
+    // Animate the width of the element with class ".html" using GSAP
+    gsap.from(".html", {
+      duration: 1,
+      width: cityElement.style.display === "block" ? 0 : 100,
+      ease: "power2.out" // Use any easing function you prefer
+    });
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 </script>
-   
+
 </body>
-</html> 
+</html>

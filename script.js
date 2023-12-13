@@ -189,12 +189,7 @@ textAnimation();
         // markers: true
       },
     });
-    gsap.from(".html", {
-     with:0,
-        // markers: true
-      
-    });
-
+  
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
@@ -205,18 +200,31 @@ textAnimation();
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
-      document.getElementById(cityName).style.display = "block";
+    
+      // Animate the width of the element with class ".html" using GSAP
+    
+      var cityElement = document.getElementById(cityName);
+      cityElement.style.display = "block";
       evt.currentTarget.className += " active";
+    
+      // if (cityElement.style.display === "block") {
+      //   gsap.from(".html", {
+      //     duration: 1, width: '0%', ease: 'power2.inOut'  // Initial width
+      //     // Add any other animation properties you want
+      //   });
+      // }
+      // else{
+      //   gsap.to(".html", {
+      //     duration: 1, width: '90%', ease: 'power2.inOut'    // Initial width
+      //     // Add any other animation properties you want
+      //   });
+      // }
     }
     
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
     
-
-  
-
-
-
-
-
-
+    document.addEventListener("DOMContentLoaded", function () {
+      // Your code here
+    });
+    
