@@ -23,7 +23,7 @@
 	<title>Joydev Portfolio</title>
 </head>
 
-<body>
+<body ng-app="myApp">
 	<div class="cursor" id="cursor">
 	</div>
 	<div class="header">
@@ -31,7 +31,11 @@
 			<h2>JOYDEV.</h2>
 		</div>
 		<nav class="navbar">
-			<ul>
+			<ul> <div class="menu" my-directive>
+				<p class='about'>ABOUT</p>
+				<p class='team'>TEAM</p>
+				<p class='contact'>CONTACT</p>
+			</div>
 				<a href="#pageone">HOME</a>
 				<a href="#">ABOUT</a>
 				<a href="#">PROFFESION</a>
@@ -373,7 +377,7 @@
 											<div class="skills php"></div>
 										</div>
 									</div>
-				
+
 									<div class="maincontain">
 										<p>Gsap</p>
 										<div class="contain">
@@ -432,7 +436,7 @@
 											<div class="skills php"></div>
 										</div>
 									</div>
-				
+
 									<div class="maincontain">
 										<p>Gsap</p>
 										<div class="contain">
@@ -460,13 +464,12 @@
 
 		</div>
 		<div class="fifthpage">
-			
+
 		</div>
 		<hr>
 	</div>
-	</div>
-	</div>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
 		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="

@@ -227,4 +227,36 @@ textAnimation();
     document.addEventListener("DOMContentLoaded", function () {
       // Your code here
     });
+
+
+
+    angular.module('myApp', [])
+.directive('myDirective', myDirective);
+
+		function myDirective() {           
+		  return {
+		   restrict: 'A',
+		   link: clicker
+		 }
+
+		function clicker() {
+			
+			var about = $('.about');
+			var team = $('.team');
+			var contact = $('.contact');
+
+			$(about).bind('click', function() {
+				console.log("HELLO");
+        $("body, html").animate({scrollTop: 0}, "slow");			
+			})
+
+			$(team).bind('click', function() {
+				$("body, html").animate({scrollTop: 500}, "slow");			
+			})
+
+			$(contact).bind('click', function() {
+				$("body, html").animate({scrollTop: 1000}, "slow");			
+			})
+     }
+		}
     

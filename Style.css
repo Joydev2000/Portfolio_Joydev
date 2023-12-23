@@ -9,6 +9,9 @@
 	--headingColor:#1E2125;
 	
 }
+html {
+	scroll-behavior: smooth;
+  }
 
 * {
 	margin: 0;
