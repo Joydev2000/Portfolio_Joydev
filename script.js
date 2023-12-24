@@ -249,6 +249,21 @@ textAnimation();
     document.getElementById("defaultOpen").click();
     
     document.addEventListener("DOMContentLoaded", function () {
+      
+
       // Your code here
     });
+
+
+
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    const targetId = button.getAttribute('data-target');
+    const targetContent = document.getElementById(targetId);
+    if (targetContent) {
+      targetContent.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
