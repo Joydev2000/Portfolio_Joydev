@@ -44,6 +44,28 @@
 //     smooth: true
 // });
 
+function myfunction() {
+  var one = document.querySelector(".header");
+  var ypos = window.pageYOffset;
+ 
+
+  if (ypos > 150) {
+    one.style.position = "fixed";
+    one.style.backgroundColor = "#f4f5f6";
+    one.style.boxShadow = "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff";
+    one.style.transition = ".5s ease all";
+  }
+  else {
+    one.style.position = "relative";
+    one.style.background = "Transparent";
+    one.style.boxShadow = "none";
+  }
+}
+window.onscroll = function () {
+  myfunction();
+};
+
+
 function mousemoveEvent(){
 
   var circel = document.getElementById("cursor");
@@ -177,18 +199,20 @@ function textAnimation() {
   }
 textAnimation();
   
-    gsap.to(".header", {
-      backgroundColor: "#f4f5f6",
-      boxShadow: "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
-      scrollTrigger: {
-        trigger: ".header",
-        scroller: ".main",
-        start: "top 0",
-        end: "top -5%",
-        scrub: true,
-        // markers: true
-      },
-    });
+    // gsap.to(".header", {
+    //   backgroundColor: "#f4f5f6",
+    //   duration: 1,
+    //   ease: "power2.inOut",
+    //   boxShadow: "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
+    //   scrollTrigger: {
+    //     trigger: ".header",
+    //     scroller: "body",
+    //     start: "top 0",
+    //     end: "top -5%",
+    //     scrub: true,
+    //     // markers: true
+    //   },
+    // });
   
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
@@ -228,35 +252,3 @@ textAnimation();
       // Your code here
     });
 
-
-
-    angular.module('myApp', [])
-.directive('myDirective', myDirective);
-
-		function myDirective() {           
-		  return {
-		   restrict: 'A',
-		   link: clicker
-		 }
-
-		function clicker() {
-			
-			var about = $('.about');
-			var team = $('.team');
-			var contact = $('.contact');
-
-			$(about).bind('click', function() {
-				console.log("HELLO");
-        $("body, html").animate({scrollTop: 0}, "slow");			
-			})
-
-			$(team).bind('click', function() {
-				$("body, html").animate({scrollTop: 500}, "slow");			
-			})
-
-			$(contact).bind('click', function() {
-				$("body, html").animate({scrollTop: 1000}, "slow");			
-			})
-     }
-		}
-    
