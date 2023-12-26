@@ -50,7 +50,8 @@ function myfunction() {
  
 
   if (ypos > 150) {
-    one.style.position = "fixed";
+    one.style.position = "sticky";
+    one.style.top = "0px";
     one.style.backgroundColor = "#f4f5f6";
     one.style.boxShadow = "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff";
     one.style.transition = ".5s ease all";
@@ -199,71 +200,69 @@ function textAnimation() {
   }
 textAnimation();
   
-    // gsap.to(".header", {
-    //   backgroundColor: "#f4f5f6",
-    //   duration: 1,
-    //   ease: "power2.inOut",
-    //   boxShadow: "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
-    //   scrollTrigger: {
-    //     trigger: ".header",
-    //     scroller: "body",
-    //     start: "top 0",
-    //     end: "top -5%",
-    //     scrub: true,
-    //     // markers: true
-    //   },
-    // });
+// gsap.to(".header", {
+//   backgroundColor: "#f4f5f6",
+//   duration: 1,
+//   ease: "power2.inOut",
+//   boxShadow: "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
+//   scrollTrigger: {
+//     trigger: ".header",
+//     scroller: "body",
+//     start: "top 0",
+//     end: "top -5%",
+//     scrub: true,
+//     // markers: true
+//   },
+// });
+
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
   
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-    
-      // Animate the width of the element with class ".html" using GSAP
-    
-      var cityElement = document.getElementById(cityName);
-      cityElement.style.display = "block";
-      evt.currentTarget.className += " active";
-    
-      // if (cityElement.style.display === "block") {
-      //   gsap.from(".html", {
-      //     duration: 1, width: '0%', ease: 'power2.inOut'  // Initial width
-      //     // Add any other animation properties you want
-      //   });
-      // }
-      // else{
-      //   gsap.to(".html", {
-      //     duration: 1, width: '90%', ease: 'power2.inOut'    // Initial width
-      //     // Add any other animation properties you want
-      //   });
-      // }
-    }
-    
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      
+    // Animate the width of the element with class ".html" using GSAP
+  
+    var cityElement = document.getElementById(cityName);
+    cityElement.style.display = "block";
+    evt.currentTarget.className += " active";
+  
+    // if (cityElement.style.display === "block") {
+    //   gsap.from(".html", {
+    //     duration: 1, width: '0%', ease: 'power2.inOut'  // Initial width
+    //     // Add any other animation properties you want
+    //   });
+    // }
+    // else{
+    //   gsap.to(".html", {
+    //     duration: 1, width: '90%', ease: 'power2.inOut'    // Initial width
+    //     // Add any other animation properties you want
+    //   });
+    // }
+  }
+  document.getElementById("defaultOpen").click();
+   
 
-      // Your code here
+
+   
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const targetId = button.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.scrollIntoView({ behavior: 'smooth' });
+      }
     });
-
-
-
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    const targetId = button.getAttribute('data-target');
-    const targetContent = document.getElementById(targetId);
-    if (targetContent) {
-      targetContent.scrollIntoView({ behavior: 'smooth' });
-    }
   });
 });
+
+
+
 
