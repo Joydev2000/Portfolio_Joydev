@@ -683,6 +683,18 @@ box-shadow: var(--boxshadow);
 	/* background-color: green; */
 	
 }
+/* .fourthpage::after{
+	position: absolute;
+    max-width: 1270px;
+    height: 1px;
+    background: #121415;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+} */
+
 .fourthpage h2{
 	text-align: center;
 	color: var(--h_color);
@@ -750,7 +762,7 @@ box-shadow: var(--boxshadow);
 	flex-basis: 50%;
 
 }
-.Education_quali .ed_title{
+/* .Education_quali .ed_title{
 	font-size: 1.9vw;
 	text-align: left;
 	letter-spacing: -1px;
@@ -758,7 +770,22 @@ box-shadow: var(--boxshadow);
 	margin-top: 40px;
 	color: var(--headingColor);
 	
+} */
+
+.Education_quali h2{
+	text-align: left;
+    margin-top: 30px;
+    font-size: .8vw;
+    font-weight: 500
 }
+/* .Education_quali h5{
+	text-align: left;
+    margin-top: 10px;
+    font-size: 1.9vw;
+    font-weight: 600;
+    color: var(--headingColor);
+} */
+
 .professional_quali .ed_title{
 	font-size: 1.9vw;
 	text-align: left;
