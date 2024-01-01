@@ -744,7 +744,7 @@ box-shadow: var(--boxshadow);
 }
 .resume_content{
 	width: 100%;
-	height:100vh;
+	height:fit-content;
 }
   .maineducation{
 	/* background-color: red; */
@@ -774,7 +774,7 @@ box-shadow: var(--boxshadow);
 
 .Education_quali h2{
 	text-align: left;
-    margin-top: 30px;
+    padding-top: 30px;
     font-size: .8vw;
     font-weight: 500
 }
@@ -791,13 +791,13 @@ box-shadow: var(--boxshadow);
 	text-align: left;
 	letter-spacing: -1px;
 	font-weight: 600;
-	margin-top: 40px;
+	padding-top: 40px;
 	color: var(--headingColor);
 }
 .timeline {
 	position: relative;
 	margin: 0 auto;
-	margin-top: 40px;
+	padding-top: 40px;
   }
   
   /* The actual timeline (the vertical ruler) */
@@ -966,9 +966,9 @@ box-shadow: var(--boxshadow);
 	color: var(--headingColor);
 }
 .skill_bar{
-	margin-top: 40px;
+	padding-top: 40px;
 	width: 98%;
-	height: 100%;
+	/* height: 100%; */
 	/* background-color: #d11414; */
 	display: flex;
 	flex-direction: column;
@@ -978,6 +978,11 @@ box-shadow: var(--boxshadow);
   .maincontain{
 	width: 100%;
 	height: 100%;
+	
+	
+  }
+  .maincontain:not(:first-child){
+	padding-top: 16px;
   }
   .maincontain p{
 	font-size: .8vw;
@@ -1031,5 +1036,22 @@ box-shadow: var(--boxshadow);
 		width: 90%;
 	}
   }
+  .language_content{
+	width: 70%;
+	margin: 0px auto;
+  }
+  .language_content h2{
+	text-align: center;
+	
+  }
+  .language_content h3{
+	text-align: center;
+	
+  }
+  .Experience_content{
+	width: 55%;
+	margin: 0px auto;
+  }
+
 
   
