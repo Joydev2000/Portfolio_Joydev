@@ -756,44 +756,31 @@ box-shadow: var(--boxshadow);
 	/* background-color: #7f2929; */
 	flex-basis: 50%;
 	
+	
 }
 .Education_quali{
 	/* background-color: #0A66C2; */
 	flex-basis: 50%;
+	padding-left: 0.6vw
 
 }
-/* .Education_quali .ed_title{
-	font-size: 1.9vw;
-	text-align: left;
-	letter-spacing: -1px;
-	font-weight: 600;
-	margin-top: 40px;
-	color: var(--headingColor);
-	
-} */
 
-.Education_quali h2{
+.Education_quali h4{
 	text-align: left;
     padding-top: 30px;
     font-size: .8vw;
-    font-weight: 500
+    font-weight: 500;
+	color: var(--h_color);
 }
-/* .Education_quali h5{
+.Education_quali h5{
 	text-align: left;
     margin-top: 10px;
     font-size: 1.9vw;
     font-weight: 600;
     color: var(--headingColor);
-} */
-
-.professional_quali .ed_title{
-	font-size: 1.9vw;
-	text-align: left;
-	letter-spacing: -1px;
-	font-weight: 600;
-	padding-top: 40px;
-	color: var(--headingColor);
 }
+
+
 .timeline {
 	position: relative;
 	margin: 0 auto;
