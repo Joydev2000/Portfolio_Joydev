@@ -11,6 +11,7 @@
 }
 html {
 	scroll-behavior: smooth;
+	
   }
 
 * {
@@ -36,6 +37,15 @@ body {
     z-index: 1;
 	opacity: 1;
    
+}
+#overlay{
+	display: none;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    backdrop-filter: blur(10px);
 }
 
 hr{
@@ -578,6 +588,7 @@ box-shadow: var(--boxshadow);
 	position: relative;
 	/* background-color: red; */
 }
+
 .thirdpage h2{
 	text-align: center;
 	color: var(--h_color);

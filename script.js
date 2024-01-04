@@ -72,9 +72,11 @@ function mousemoveEvent(){
   var circel = document.getElementById("cursor");
   const lerp = (x, y, a) => x * (1 - a) + y * a;
   var frames = document.querySelectorAll(".frame");
+ 
   var boxes = document.querySelectorAll(".boxun");
 
 
+ 
   window.addEventListener("mousemove", function (dets) {
     gsap.to(circel, {
       x: dets.x,
@@ -93,18 +95,22 @@ function mousemoveEvent(){
       );
     });
 
-    // Adjust the z-index based on whether the cursor is over a 'box' element
+   
     if (isOverBox) {
-      circel.style.zIndex = -1; // Cursor goes below 'box' elements
+      circel.style.zIndex = -1; 
     } else {
-      circel.style.zIndex = 10;  // Cursor is above all other elements
+      circel.style.zIndex = 10; 
     }
 
   });
+  
+
 
   frames.forEach(frame => {
 
     frame.addEventListener("mousemove", function (dets) {
+
+     
 
       var dims = frame.getBoundingClientRect();
       var xstart = dims.x;
@@ -125,6 +131,7 @@ function mousemoveEvent(){
     });
 
     frame.addEventListener("mouseleave", function (dets) {
+     
       gsap.to(frame, {
         x: 0,
         y: 0
