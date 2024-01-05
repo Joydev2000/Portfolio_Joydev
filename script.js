@@ -74,6 +74,7 @@ function mousemoveEvent(){
   var frames = document.querySelectorAll(".frame");
  
   var boxes = document.querySelectorAll(".boxun");
+  var goal = document.querySelectorAll(".goal");
 
 
  
@@ -160,26 +161,26 @@ function mousemoveEvent(){
   });
 
 
+  goal.forEach(goal => {
+    goal.addEventListener("mousemove", function () {
+      gsap.to(circel, {
+        scale: 1.5,
+        border: "1px solid #1E2125",
+        backgroundColor: 'transparent'
+      });
+    });
 
-// var aElements = document.querySelectorAll(".navbar ul a");
-// aElements.forEach(function(aElement) {
-//     aElement.addEventListener("mousemove", function () {
-//         gsap.to(circel, {
-//             border: "1px solid black",
-//             backgroundColor: 'transparent',
-//             duration:.3,
-//             transform: "scale(3)"
-//         });
-//     });
+    goal.addEventListener("mouseleave", function () {
+      gsap.to(circel, {
+        scale: 1,
+        border: 'none',
+        backgroundColor: "#c280a6d0"
+      });
+    });
 
-//     aElement.addEventListener("mouseleave", function () {
-//         gsap.to(circel, {
-//             border: 'none',
-//             duration:.3,
-//             transform: "scale(1)"
-//         });
-//     });
-// });
+
+  });
+
  
 }
 mousemoveEvent();
@@ -243,7 +244,49 @@ textAnimation();
 //   },
 // });
 
-  function openCity(evt, cityName) {
+function openSwiper(overlay, swiperev) {
+  document.body.style.overflow = 'hidden';
+  var a, tabcontentSW,
+    tabcontentSW = document.getElementsByClassName("overlaySwiper");
+  for (a = 0; a < tabcontentSW.length; a++) {
+    tabcontentSW[a].style.display = "none";
+  }
+  document.getElementById(swiperev).style.display = "block";
+  document.getElementById(overlay).style.display = "block";
+
+  // Add event listener to the overlay element
+  document.getElementById(overlay).addEventListener('click', function () {
+    // Hide both overlay and overlaySwiper
+    document.body.style.overflow = 'auto';
+    document.getElementById(overlay).style.display = "none";
+   
+
+    // Iterate through the collection and hide each element
+    for (var a = 0; a < tabcontentSW.length; a++) {
+      tabcontentSW[a].style.display = "none";
+    }
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -253,25 +296,9 @@ textAnimation();
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-  
-    // Animate the width of the element with class ".html" using GSAP
-  
-    var cityElement = document.getElementById(cityName);
+   var cityElement = document.getElementById(cityName);
     cityElement.style.display = "block";
     evt.currentTarget.className += " active";
-  
-    // if (cityElement.style.display === "block") {
-    //   gsap.from(".html", {
-    //     duration: 1, width: '0%', ease: 'power2.inOut'  // Initial width
-    //     // Add any other animation properties you want
-    //   });
-    // }
-    // else{
-    //   gsap.to(".html", {
-    //     duration: 1, width: '90%', ease: 'power2.inOut'    // Initial width
-    //     // Add any other animation properties you want
-    //   });
-    // }
   }
   document.getElementById("defaultOpen").click();
    
@@ -290,6 +317,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
 
 
 
