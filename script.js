@@ -185,26 +185,7 @@ function mousemoveEvent(){
 }
 mousemoveEvent();
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  effect: 'fade',
-  loop: true,
-  speed: 300,
-  mousewheel: {
-    invert: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-});
+
 
 function textAnimation() {
     const text = document.querySelector(".sec-text");
@@ -266,7 +247,51 @@ function openSwiper(overlay, swiperev) {
       tabcontentSW[a].style.display = "none";
     }
   });
+
+
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    effect: 'fade',
+    loop: true,
+    speed: 300,
+    mousewheel: {
+      invert: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
+  var modal = document.getElementById('modal');
+
+var modalClose = document.getElementById('modal-close');
+modalClose.addEventListener('click', function() { 
+  modal.style.display = "none";
+});
+
+// global handler
+document.addEventListener('dblclick', function (e) { 
+  if (e.target.className.indexOf('modal-target') !== -1) {
+      var img = e.target;
+      var modalImg = document.getElementById("modal-content");
+      var captionText = document.getElementById("modal-caption");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+   }
+});
+
+
 }
+
 
 
 
@@ -304,7 +329,6 @@ function openCity(evt, cityName) {
    
 
 
-   
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll('.btn');
   buttons.forEach(function (button) {

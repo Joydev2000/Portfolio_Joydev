@@ -1,185 +1,310 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carousel Slider</title>
-  <script type="module" crossorigin src="assets/index.6f279bdd.js"></script>
-    <link rel="modulepreload" href="assets/vendor.4ea4e284.js">
-    <link rel="stylesheet" href="assets/index.0f26cec9.css">
-  </head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding:0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient( 45deg,  rgba(255,166,0,1) 14.7%, rgba(255,99,97,1) 73% );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #26384E;
+  transform: translateY(20px);
+  transition: all .4s ease;
+  transition-delay: .2s;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  @media screen and (max-width: 520px) {&{
+    font-size: 16px;
+    line-height: 24px;
+   }}
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #889DB8;
+  transform: translateY(20px);
+  transition: all .4s ease;
+  transition-delay: .3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  @media screen and (max-width: 520px) {&{
+    font-size: 14px;
+    line-height: 20px;
+  }}
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-container {
+  background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  position: relative;
+  max-width: 420px;
+  height: 100%;
+  max-height: 420px;
+  border-radius: 10px;
+  display: none;
+}
+
+.slider-image-wrapper {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  opacity: 0;
+  background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
+  cursor: grab;
+  
+  &-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .4s;
+    
+    > * {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+}
+
+.swiper-slide-active {
+  .slider-item > .slider-item-content > * {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .2s;
+}
+
+.swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translatex(-50%);
+  z-index: 1;
+  width: auto!important;
+}
+
+.swiper-pagination-bullet {
+	border-radius: 0;
+	width: 8px;
+  height: 8px;
+  border-radius: 50%;
+	line-height: 30px;
+	font-size: 12px;
+	opacity: 1;
+	background: rgba(255, 185, 0,0.3);
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.swiper-pagination-bullet-active {
+	background: #FFB200;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.slider-buttons {
+  position: absolute;
+  display: flex;
+  top: 100%;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  position: relative;
+  margin-left: 4px;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    //top: 50%;
+    //transform: translatey(-50%);
+    bottom: -1px;
+    transition: .2s;
+  }
+  
+  &:hover:before { width: 100%; }
+}
+
+@media screen and (max-width: 520px) {
+  .swiper-button-next:hover:before,
+  .swiper-button-prev:hover:before {
+  display: none;
+  }
+}
+   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <body>
-  <div id="app">
-    <!-- Carousel slider -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/guardians-of-the-galaxy.jpg" alt="">
-            <div class="slide-content">
-              <h2>Guardians Of The Galaxy</h2>
-              <p>A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge
-                the universe.</p>
-            </div>
+  <button onclick="openswiper('swiper-container')">click</button>
+  <div class="swiper-container" id="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="slider-item swiper-slide">
+        <div class="slider-image-wrapper">
+          <img class="slider-image" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
           </div>
-
+        <div class="slider-item-content">
+          <h1>Postcards From Italy</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
         </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/justice-league.jpg" alt="">
-            <div class="slide-content">
-              <h2>Justice League</h2>
-              <p>Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with
-                Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching
-                threat
-                of catastrophic proportions.</p>
-            </div>
+      </div>
+      <div class="slider-item swiper-slide">
+        <div class="slider-image-wrapper">
+          <img class="slider-image" src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="SliderImg">
           </div>
+        <div class="slider-item-content">
+          <h1>Bunker</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
         </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/spider-man.jpg" alt="">
-            <div class="slide-content">
-              <h2>Spider-Man: Far from Home</h2>
-              <p>Following the events of Avengers: Endgame (2019), Spider-Man must step up to take on new threats in a
-                world that has changed forever.</p>
-            </div>
+      </div>
+      <div class="slider-item swiper-slide">
+        <div class="slider-image-wrapper">
+          <img class="slider-image" src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
           </div>
+        <div class="slider-item-content">
+          <h1>Small Mountain</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
         </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/suicide-squad.jpg" alt="">
-            <div class="slide-content">
-              <h2>The Suicide Squad</h2>
-              <p>Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle Reve
-                prison
-                join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused
-                island of Corto Maltese.</p>
-            </div>
+      </div>
+      <div class="slider-item swiper-slide">
+        <div class="slider-image-wrapper">
+          <img class="slider-image" src="https://images.unsplash.com/photo-1564604761388-83eafc96f668?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=801.2.1&auto=format&fit=crop&w=2167&q=80" alt="SliderImg">
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/thor-ragnarok.jpg" alt="">
-            <div class="slide-content">
-              <h2>Thor: Ragnarok</h2>
-              <p>Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök,
-                the
-                destruction of his world, at the hands of the powerful and ruthless villain Hela.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/dr-strange.jpg" alt="">
-            <div class="slide-content">
-              <h2>Doctor Strange</h2>
-              <p>America Chavez and a version of Stephen Strange are chased by a demon in the space between universes
-                while searching for the Book of Vishanti</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/eternals.jpg" alt="">
-            <div class="slide-content">
-              <h2>Eternals </h2>
-              <p>In 5000 BC, ten superpowered Eternals—Ajak, Sersi, Ikaris, Kingo, Sprite, Phastos, Makkari, Druig,
-                Gilgamesh, and Thena—are sent by the Celestial Arishem to Earth on their starship, the Domo, to
-                exterminate the invasive Deviants.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/guardians-of-the-galaxy.jpg" alt="">
-            <div class="slide-content">
-              <h2>Guardians Of The Galaxy</h2>
-              <p>A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge
-                the universe.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/justice-league.jpg" alt="">
-            <div class="slide-content">
-              <h2>Justice League</h2>
-              <p>Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with
-                Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching
-                threat
-                of catastrophic proportions.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/spider-man.jpg" alt="">
-            <div class="slide-content">
-              <h2>Spider-Man: Far from Home</h2>
-              <p>Following the events of Avengers: Endgame (2019), Spider-Man must step up to take on new threats in a
-                world that has changed forever.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/suicide-squad.jpg" alt="">
-            <div class="slide-content">
-              <h2>The Suicide Squad</h2>
-              <p>Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle Reve
-                prison
-                join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused
-                island of Corto Maltese.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/thor-ragnarok.jpg" alt="">
-            <div class="slide-content">
-              <h2>Thor: Ragnarok</h2>
-              <p>Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök,
-                the
-                destruction of his world, at the hands of the powerful and ruthless villain Hela.</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/dr-strange.jpg" alt="">
-            <div class="slide-content">
-              <h2>Doctor Strange</h2>
-              <p>America Chavez and a version of Stephen Strange are chased by a demon in the space between universes
-                while searching for the Book of Vishanti</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-carousel-animate-opacity">
-            <img src="./images/eternals.jpg" alt="">
-            <div class="slide-content">
-              <h2>Eternals </h2>
-              <p>In 5000 BC, ten superpowered Eternals—Ajak, Sersi, Ikaris, Kingo, Sprite, Phastos, Makkari, Druig,
-                Gilgamesh, and Thena—are sent by the Celestial Arishem to Earth on their starship, the Domo, to
-                exterminate the invasive Deviants.</p>
-            </div>
-          </div>
+        <div class="slider-item-content">
+          <h1>Walking On a Dream</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
         </div>
       </div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="slider-buttons">
+        <button class="swiper-button-prev">Prev</button>
+        <button class="swiper-button-next">Next</button>
+    </div>
+  
     <div class="swiper-pagination"></div>
   </div>
-  
-<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "07e9b2efafbd4b458690b79234a62148"}'></script><!-- Cloudflare Pages Analytics --></body>
+  		<script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
 
+<script>
+  function openswiper(containerId) {
+    var container = document.getElementById(containerId);
+    container.style.display = "block";
+
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      effect: 'fade',
+      loop: true,
+      speed: 300,
+      mousewheel: {
+        invert: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+  }
+
+
+</script>
+</body>
 </html>
