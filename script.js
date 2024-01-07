@@ -272,13 +272,8 @@ function openSwiper(overlay, swiperev) {
 
   var modal = document.getElementById('modal');
 
-var modalClose = document.getElementById('modal-close');
-modalClose.addEventListener('click', function() { 
-  modal.style.display = "none";
-});
-
 // global handler
-document.addEventListener('dblclick', function (e) { 
+document.addEventListener('click', function (e) { 
   if (e.target.className.indexOf('modal-target') !== -1) {
       var img = e.target;
       var modalImg = document.getElementById("modal-content");
@@ -289,27 +284,13 @@ document.addEventListener('dblclick', function (e) {
    }
 });
 
+var modalClose = document.getElementById('modal-close');
+modalClose.addEventListener('click', function() { 
+  modal.style.display = "none";
+});
+
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -326,9 +307,7 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
   }
   document.getElementById("defaultOpen").click();
-   
-
-
+  
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll('.btn');
   buttons.forEach(function (button) {
