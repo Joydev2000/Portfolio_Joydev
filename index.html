@@ -65,12 +65,13 @@
 				</div>
 				<div class="frames">
 
-					<h1 class="frame up"> <span>Lets Talk</span>
-						<span class="up">Hire Me</span>
+					<h1 class="frame btn up" id="cont" data-target="page5" > <a href="#"><span>Lets Talk</span>
+						<span class="up">Hire Me</span></a>
 					</h1>
 
-					<h1 class="frame up"> <span>Resume</span>
+					<h1 class="frame up"> <a  href="Assect\Cv.pdf" download=""><span>Resume</span>
 						<span class="up">Download Cv</span>
+					</a>
 					</h1>
 
 				</div>
@@ -94,7 +95,7 @@
 
 
 		</div>
-		<hr>
+		<hr style="margin-top: 110px;">
 		<div id="page2" class="secondpage">
 			<h3 class="up">FEATURES
 				<span>
@@ -872,24 +873,28 @@
 
         <form action="">
          <div class="firstrow">
-			<div class="frow">
+			<div class="frow half_width">
 				<input id="name" type="text" required>
 			<label class="name" for="name">Name</label>
 			</div>
-			<div class="frow">
+			<div class="frow half_width">
 				<input id="number" type="number" required>
 			<label class="number" for="number">Number</label>
 			</div>
+			<div class="frow full_width">
+				<input id="email" type="email" required>
+			<label class="name" for="email">Email</label>
 			</div>
-         
-
-		  <label for="mail">Email :  <input id="mail" type="email" placeholder="email" required></label> <br>
-       
-
-		<label for="area">Leave A Comment :</label>
-        <textarea name="" id="area" cols="0" rows="0"></textarea> <br>
-
-		<button id="sub">Submit</button>
+			<div class="frow full_width">
+				<input id="subject" type="text" required>
+			<label class="name" for="subject">Subject</label>
+			</div>
+			<div class="frow full_width">
+				<label for="textarea" class="textarea">Your Massage</label>
+				<textarea name="\" class="textarea" id="textarea" cols="30" rows="10"></textarea>
+			</div>
+			</div>
+			<button id="submit">Send Your Massage</button>
         </form>
        
        
@@ -899,6 +904,13 @@
 
 			</div>
 		<hr>
+		<footer>
+			<div class="footercontent">
+				<img src="/Assect/Artboard 1.png" alt="">
+			<h2>© 2024. All rights reserved by JoydevHalder.</h2>
+			</div>
+			
+		</footer>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.1.js"

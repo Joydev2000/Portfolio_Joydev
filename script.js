@@ -321,6 +321,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// document.addEventListener("DOMContentLoaded",function(){
+//   document.getElementById("cont").addEventListener('click', function(){
+//     document.getElementsByClassName("fifthpage")[0].scrollIntoView({ behavior: 'smooth'});
+//   })
+
+// });
+
+document.addEventListener("DOMContentLoaded",function(){
+  document.getElementById("number").addEventListener("wheel",
+    function (event) {
+        event.preventDefault();
+        
+    });
+
+});
+
 
 
 
