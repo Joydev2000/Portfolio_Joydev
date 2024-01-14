@@ -95,11 +95,15 @@ hr {
 }
 .logo a{
 	text-decoration: none;
+	cursor: pointer;
 }
 .logo a i{
 	font-size: 40px;
 	text-decoration: none;
 	color: var(--h_color);
+}
+#open{
+	display: none;
 }
 /* #logo{
 	width: 90;
@@ -115,7 +119,7 @@ hr {
 	color: #3c3e41;
 } */
 .navbar{
-	display: none;
+	display: block;
 }
 .navbar ul a {
 	padding-right: 2vw;
@@ -1783,36 +1787,44 @@ footer h2{
 /* mobile responsive Start */
 
 @media screen and (max-width: 1000px) {
-	/* nav{
+	
+	 .navbar{
 
-		width: 50%;
-		height: 100vh;
-		position: absolute;
-		right: 0px;
-		top: 80px;
-		background:var(--boxBackground);
-		box-shadow: var(--boxshadow);
-		
-		
+		display: none;
 	}
-	nav ul{
-      display: flex;
-	  gap: 50px;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  margin: 0;
+	
+	#open{
+		display: block;
 	}
-	.navbar ul a{
-		font-size: 2vw;
+	.row{
+		flex-direction: column;
 	}
-	.navbar ul a:not(:last-child) {
-		margin-right: 0px;
-	} */
+	.fifthpagecintent .herocontent{
+		width: 100%;
+	}
+	.fourthpage{
+		width: 82%;
+	}
+	.tab{
+		height: 30vh;
+	}
+	.tablinks{
+		font-size: 3.3vw;
+	}
+	.Experience_content{
+		width: 100%;
+	}
+	.language_content{
+		width: 100%;
+	}
+	
+
+	
  
  
 
 }
+
 .mobile_menu{
 	/* display: none; */
 	position: fixed;
@@ -1850,7 +1862,7 @@ footer h2{
    }
    .header_menu .mbicon{
 	width: 47%;
-	/* background: #4a1f1f; */
+	/* display: none; */
 	text-align: left;
 	position: relative;
 	cursor: pointer;

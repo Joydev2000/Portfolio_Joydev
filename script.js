@@ -336,42 +336,27 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
 });
-document.addEventListener("DOMContentLoaded", function(){
-  let open = document.getElementById("open");
-  let close = document.getElementById("close");
-  var menu = document.querySelector(".mobile_menu");
-  var newwList = document.querySelectorAll(".new");
 
-  open.addEventListener("click", () => {
-    menu.style.transform = "translateX(0px)";
-    menu.style.transition = "1s ease";
-    // menu.style.opacity = "1";
-    // menu.style.visibility = "visible";
-    document.body.style.overflow = 'hidden';
+$(document).ready(function () {
+  var open = $("#open");
+  var close = $("#close");
+  var menu = $(".mobile_menu");
+  var newwList = $(".new");
+
+  open.click(function () {
+    menu.css({ "transform": "translateX(0px)", "transition": "1s ease" });
+    $("body").css("overflow", "hidden");
   });
 
-  close.addEventListener("click", () =>  {
-    menu.style.transform = "translateX(100%)";
-    menu.style.transition = "1s ease";
-    // menu.style.opacity = "0";
-    // menu.style.visibility = "hidden";
-    document.body.style.overflow = 'auto';
+  close.click(function () {
+    menu.css({ "transform": "translateX(100%)", "transition": "1s ease" });
+    $("body").css("overflow", "auto");
   });
 
-  newwList.forEach((neww) => {
-    neww.addEventListener("click", function () {
-      menu.style.transform = "translateX(100%)";
-      menu.style.transition = ".5s ease";
-      document.body.style.overflow = 'auto';
-    });
-   
+  newwList.click(function () {
+    menu.css({ "transform": "translateX(100%)", "transition": ".5s ease" });
+    $("body").css("overflow", "auto");
   });
-  // if(newwList==click){
-  //   menu.style.transition = ".2s ease"
-  // }
-  // else{
-  //   menu.style.transition = "1s ease"
-  // }
 });
 
 
