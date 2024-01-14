@@ -1790,152 +1790,6 @@ footer h2{
 
 
 /* mobile responsive Start */
-
-@media screen and (max-width: 1000px) {
-	
-	 .navbar{
-
-		display: none;
-	}
-	
-	#open{
-		display: block;
-	}
-	.row{
-		flex-direction: column;
-	}
-	.fifthpagecintent .herocontent{
-		width: 100%;
-	}
-	.fourthpage{
-		width: 82%;
-	}
-	.tab{
-		height: 30vh;
-	}
-	.tablinks{
-		font-size: 3.3vw;
-	}
-	.Experience_content{
-		width: 100%;
-	}
-	.skill_bar,.language_content{
-		width: 100%;
-	}
-	.container h1 {
-		font-size: 7.5vw;
-		color: #3c3e41;
-		font-weight: 600;
-	}
-	.container .text{
-		font-size: 7.5vw;
-	}
-	.half_width {
-		width: 100%;
-	}
-
-
-}
-
-@media screen and (max-width:1345px) {
-	.frames{
-		width: 60%;
-		
-	}
-	.fifthpage,.fourthpage,.thirdpage,.secondpage,.home{
-		width: 85%;
-	}
-	.home_content {
-		width: 54%;
-	}
-	.image_content{
-		height: 90%;
-	}
-	.text_con p{
-		width: 100%;
-	}
-	.container h1{
-		font-size: 4.2vw;
-	}
-	.container .text{
-		font-size: 4vw;
-	}
-}
-@media screen and (max-width:1620px) {
-	.frames{
-		width: 60%;
-	}
-}
-@media screen and (max-width:1105px) {
-	.home{
-		height: 100vh;
-		flex-direction: column-reverse;
-		margin-top: 440px;
-	}
-	.container {
-		width: auto;
-		overflow: hidden;
-	}
-	.hero_img{
-		width: 100%;
-	}
-	.home_content {
-		width: 100%;
-		margin-top: 50px;
-		/* background: #000; */
-	}
-	.frames{
-		width:90%;
-	}
-	.my_image img {
-		width: 100%;
-		height: 100%;
-	}
-	.image_content {
-		height: 100%;
-		width: 100%;
-	}
-	
-	.container h1 {
-		font-size: 5vw;
-	}
-	.container .text {
-		font-size: 4.8vw;
-	}
-	.icon {
-		top: 70px;
-	}
-	#cursor{
-		display: none;
-	}
-
-}
-@media screen and (max-width:435px) {
-	.hero_img {
-		padding: 0px;
-	}
-	.container h1 {
-		font-size: 8vw;
-	}
-	.container .text {
-		font-size: 7.8vw;
-	}
-	.home{
-		margin-top: 150px;
-	}
-}
-@media screen and (max-height: 667px){
-.home {
-    margin-top: 316px;
-}
-}
-@media screen and (min-height: 1368px) and (min-width:912px){
-.home {
-   
-    margin-top: 187px;
-}
-}
-
 .mobile_menu{
 	/* display: none; */
 	position: fixed;
@@ -1953,8 +1807,6 @@ footer h2{
 	
 	
    }
- 
-  
    .header_menu{
 	padding-top: 20px;
 	width: 90%;
@@ -2107,17 +1959,157 @@ footer h2{
 	font-size: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Mobile Resposive End */
+
+/* Device Responsive Start */
+
+@media screen and (max-width: 1000px) {
+	
+	.navbar{
+
+	   display: none;
+   }
+   
+   #open{
+	   display: block;
+   }
+   .row{
+	   flex-direction: column;
+   }
+   .fifthpagecintent .herocontent{
+	   width: 100%;
+   }
+   .fourthpage{
+	   width: 82%;
+   }
+   .tab{
+	   height: 30vh;
+   }
+   .tablinks{
+	   font-size: 3.3vw;
+   }
+   .Experience_content{
+	   width: 100%;
+   }
+   .skill_bar,.language_content{
+	   width: 100%;
+   }
+   .container h1 {
+	   font-size: 7.5vw;
+	   color: #3c3e41;
+	   font-weight: 600;
+   }
+   .container .text{
+	   font-size: 7.5vw;
+   }
+   .half_width {
+	   width: 100%;
+   }
+
+
+}
+@media screen and (max-width:1345px) {
+   .frames{
+	   width: 60%;
+	   
+   }
+   .fifthpage,.fourthpage,.thirdpage,.secondpage,.home{
+	   width: 85%;
+   }
+   .home_content {
+	   width: 54%;
+   }
+   .image_content{
+	   height: 90%;
+   }
+   .text_con p{
+	   width: 100%;
+   }
+   .container h1{
+	   font-size: 4.2vw;
+   }
+   .container .text{
+	   font-size: 4vw;
+   }
+}
+@media screen and (max-width:1620px) {
+   .frames{
+	   width: 60%;
+   }
+}
+@media screen and (max-width:1105px) {
+   .home{
+	   height: 100vh;
+	   flex-direction: column-reverse;
+	   margin-top: 440px;
+   }
+   .container {
+	   width: auto;
+	   overflow: hidden;
+   }
+   .hero_img{
+	   width: 100%;
+   }
+   .home_content {
+	   width: 100%;
+	   margin-top: 50px;
+	   /* background: #000; */
+   }
+   .frames{
+	   width:90%;
+   }
+   .my_image img {
+	   width: 100%;
+	   height: 100%;
+   }
+   .image_content {
+	   height: 100%;
+	   width: 100%;
+   }
+   
+   .container h1 {
+	   font-size: 5vw;
+   }
+   .container .text {
+	   font-size: 4.8vw;
+   }
+   .icon {
+	   top: 70px;
+   }
+   #cursor{
+	   display: none;
+   }
+
+}
+@media screen and (max-width:435px) {
+   .hero_img {
+	   padding: 0px;
+   }
+   .container h1 {
+	   font-size: 8vw;
+   }
+   .container .text {
+	   font-size: 7.8vw;
+   }
+   .home{
+	   margin-top: 120px;
+   }
+}
+@media screen and (max-height: 667px){
+.home {
+   margin-top: 316px;
+}
+}
+@media screen and (min-height: 1368px) and (min-width:912px){
+.home {
+  
+   margin-top: 187px;
+}
+}
+@media screen and (max-height: 740px){
+   .home {
+	   margin-top: 260px;
+   }
+   }
+/* Device Responsive end */
 
