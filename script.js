@@ -337,6 +337,34 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
+// document.addEventListener("DOMContentLoaded", function(){
+//   let open = document.getElementById("open");
+//   let close = document.getElementById("close");
+//   var menu = document.querySelector(".mobile_menu");
+//   var newwList = document.querySelectorAll(".new");
+
+//   open.addEventListener("click", () => {
+//     menu.style.transform = "translateX(0px)";
+//     menu.style.transition = "1s ease";
+ 
+//     document.body.style.overflow = 'hidden';
+//   });
+
+//   close.addEventListener("click", () =>  {
+//     menu.style.transform = "translateX(100%)";
+//     menu.style.transition = "1s ease";
+//     document.body.style.overflow = 'auto';
+//   });
+
+//   newwList.forEach((neww) => {
+//     neww.addEventListener("click", function () {
+//       menu.style.transform = "translateX(100%)";
+//       menu.style.transition = ".5s ease";
+//       document.body.style.overflow = 'auto';
+//     });
+   
+//   });
+// });
 $(document).ready(function () {
   var open = $("#open");
   var close = $("#close");
@@ -358,7 +386,6 @@ $(document).ready(function () {
     $("body").css("overflow", "auto");
   });
 });
-
 
 
 
