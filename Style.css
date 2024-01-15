@@ -1999,6 +1999,7 @@ footer h2{
 	   color: #3c3e41;
 	   font-weight: 600;
    }
+   
    .container .text{
 	   font-size: 7.5vw;
    }
@@ -2094,7 +2095,16 @@ footer h2{
    .home{
 	   margin-top: 120px;
    }
+   .containerd{
+	width: 100%;
+   }
 }
+@media screen and (max-width:500px) {
+	
+	.containerd{
+	 width: 100%;
+	}
+ }
 @media screen and (max-height: 667px){
 .home {
    margin-top: 316px;
