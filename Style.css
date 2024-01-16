@@ -1531,7 +1531,7 @@ box-shadow: var(--boxshadow);
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	padding: 10px;
+	padding: 25px;
 	
 }
 .thumbail{
@@ -2006,7 +2006,35 @@ footer h2{
    .half_width {
 	   width: 100%;
    }
+   .titlearea h2{
+	font-size: 5.2vw;
+   }
 
+   .titlearea h3{
+	font-size: 3.5vw;
+   }
+   .socialarea h3 ,.description p{
+	font-size: 3vw;
+   }
+   .socialarea .iconFotter{
+	width: 60%;
+   }
+   .fifthpagecintent .form{
+	padding: 20px;
+   }
+   .form h3 {
+	font-size: 5vw;
+   }
+   #submit{
+	padding:4% 0 ;
+	font-size: 2.7vw;
+   }
+   .fourthpage h2, .fifthpage h2 {
+	font-size: 2.5vw;
+   }
+   .fourthpage h1, .fifthpage h1{
+	font-size: 8vw;
+   }
 
 }
 @media screen and (max-width:1345px) {
