@@ -676,7 +676,6 @@ box-shadow: var(--boxshadow);
 	width: 100%;
 	height: 100%;
 	display: flex;
-	align-items: center;
 	z-index: 3;
 	position: relative;
 }
@@ -684,10 +683,9 @@ box-shadow: var(--boxshadow);
 .swiper-container {
 	margin: 0px auto;
 	background: linear-gradient(270deg, rgba(247, 249, 255, 1) 0%, rgba(242, 246, 255, 1) 100%);
-
 	width: 100%;
 	position: relative;
-	height: 70vh;
+	height: fit-content;
 	border-radius: 10px;
 }
 
@@ -815,7 +813,7 @@ box-shadow: var(--boxshadow);
 	justify-content: flex-end;
 	width: 100%;
 	padding-top: 25px;
-	gap: 40px;
+	gap: 100px;
 	right: 10px;
 
 	/* background-color: red; */
@@ -823,7 +821,7 @@ box-shadow: var(--boxshadow);
 
 .swiper-button-next,
 .swiper-button-prev {
-	font-size: .9vw;
+	font-size: 20px;
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
@@ -884,7 +882,7 @@ box-shadow: var(--boxshadow);
 	margin: auto;
 	display: block;
 	width: 80%;
-	height: 80vh;
+	/* height: 80vh; */
 	opacity: 1 !important;
 	max-width: 1200px;
   }
@@ -1106,7 +1104,7 @@ box-shadow: var(--boxshadow);
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	font-size: 1vw;
+	font-size: 20px;
 	transition: .2s;
 }
 
@@ -1865,6 +1863,7 @@ footer h2{
    }
    .header_menu .img img{
 	width: 80px;
+	height: 80px;
    }
 	.mobileHR{
 		width: 90%;
@@ -1986,7 +1985,7 @@ footer h2{
 	   height: 30vh;
    }
    .tablinks{
-	   font-size: 3.3vw;
+	   font-size: 18px;
    }
    .Experience_content{
 	   width: 100%;
@@ -2014,7 +2013,7 @@ footer h2{
 	font-size: 3.5vw;
    }
    .socialarea h3 ,.description p{
-	font-size: 3vw;
+	font-size: 3.5vw;
    }
    .socialarea .iconFotter{
 	width: 60%;
@@ -2027,14 +2026,53 @@ footer h2{
    }
    #submit{
 	padding:4% 0 ;
-	font-size: 2.7vw;
+	font-size: 3.7vw;
    }
    .fourthpage h2, .fifthpage h2 {
-	font-size: 2.5vw;
+	font-size: 3.8vw;
    }
-   .fourthpage h1, .fifthpage h1{
+   .titlearea h2{
+	font-size: 7vw;
+   }
+   .fourthpage h1, .fifthpage h1,
+   .thirdpage h4{
 	font-size: 8vw;
    }
+   .content h3 {
+	font-size: 4vw;
+	font-weight: 400;
+   }
+   .containerd{
+	padding-left: 40px;
+   }
+   .containerd::before{
+	width: 40px;
+   }
+   .content .heading h2 {
+    font-weight: 500;
+    font-size: 4.2vw;
+    
+}
+.Education_quali h5,
+ .professional_quali h5,
+ .code h3,
+ .designe h3{
+	font-size: 22px;
+	margin-top: 0px;
+}
+.Education_quali h4, 
+.professional_quali h4 {
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+.maincontain p {
+    font-size: 14px;
+    font-weight: 500;
+}
+.fifthpage{
+	width: 90%;
+}
 
 }
 @media screen and (max-width:1345px) {
@@ -2042,7 +2080,7 @@ footer h2{
 	   width: 60%;
 	   
    }
-   .fifthpage,.fourthpage,.thirdpage,.secondpage,.home{
+  .fourthpage,.thirdpage,.secondpage,.home{
 	   width: 85%;
    }
    .home_content {
@@ -2060,10 +2098,16 @@ footer h2{
    .container .text{
 	   font-size: 4vw;
    }
+   .overlaySwiper{
+	width: 85%;
+   }
 }
 @media screen and (max-width:1620px) {
    .frames{
 	   width: 60%;
+   }
+   .modal-content{
+	width: 90%;
    }
 }
 @media screen and (max-width:1105px) {
@@ -2108,6 +2152,14 @@ footer h2{
    #cursor{
 	   display: none;
    }
+   .overlaySwiper{
+	width: 90%;
+   }
+   
+.box_content a i {
+	font-size: 30px;
+
+}
 
 }
 @media screen and (max-width:435px) {
