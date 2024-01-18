@@ -658,7 +658,15 @@ box-shadow: var(--boxshadow);
 	font-size: 3vw;
 	letter-spacing: 2px;
 }
+.thirdpagetab{
 
+}
+/* .devlopmentwork{
+	display: none;
+}
+.designework{
+	display: none;
+} */
 
 .overlaySwiper {
 	display: none;
@@ -1161,7 +1169,7 @@ box-shadow: var(--boxshadow);
 	color: var(--headingColor);
 }
 
-.tab {
+.thirdpagetab,.tab {
 	width: 100%;
 	display: flex;
 	background: var(--boxBackground);
@@ -1172,7 +1180,7 @@ box-shadow: var(--boxshadow);
 	margin-top: 50px;
 }
 
-.tablinks {
+.thirdtablinks,.tablinks {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -1183,7 +1191,7 @@ box-shadow: var(--boxshadow);
 	transition: .2s;
 }
 
-.tablinks:hover {
+.thirdtablinks:hover,.tablinks:hover {
 	background: var(--boxBackground);
 	box-shadow: var(--boxshadow);
 	border-radius: 10px;

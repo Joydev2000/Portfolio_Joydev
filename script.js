@@ -224,6 +224,22 @@ textAnimation();
 //     // markers: true
 //   },
 // });
+function openWork(evt, devlopWork) {
+  var i, thirdtabcontent, thirdtablinks;
+  thirdtabcontent = document.getElementsByClassName("thirdtabcontent");
+  for (i = 0; i < thirdtabcontent.length; i++) {
+    thirdtabcontent[i].style.display = "none";
+  }
+  thirdtablinks = document.getElementsByClassName("thirdtablinks");
+  for (i = 0; i < thirdtablinks.length; i++) {
+    thirdtablinks[i].className = thirdtablinks[i].className.replace(" active", "");
+  }
+ var thirdElement = document.getElementById(devlopWork);
+  thirdElement.style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("thirddefaultOpen").click();
+
 
 function openSwiper(overlay, swiperev) {
   document.body.style.overflow = 'hidden';
@@ -292,6 +308,7 @@ modalClose.addEventListener('click', function() {
 
 }
 
+
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -308,6 +325,7 @@ function openCity(evt, cityName) {
   }
   document.getElementById("defaultOpen").click();
   
+
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll('.btn');
   buttons.forEach(function (button) {
@@ -365,12 +383,13 @@ document.addEventListener("DOMContentLoaded",function(){
    
 //   });
 // });
+
+
 $(document).ready(function () {
   var open = $("#open");
   var close = $("#close");
   var menu = $(".mobile_menu");
   var newwList = $(".new");
-
   open.click(function () {
     menu.css({ "transform": "translateX(0px)", "transition": "1s ease" });
     $("body").css("overflow", "hidden");
