@@ -1067,7 +1067,7 @@ box-shadow: var(--boxshadow);
 	background: var(--boxBackground);
 	box-shadow: var(--boxshadow);
 	border-radius: 10px;
-	padding: 30px 20px;
+	padding: 30px  20px ;
 	transition: .8s;
 	position: relative;
 	display: flex;
@@ -1125,6 +1125,7 @@ box-shadow: var(--boxshadow);
 
 .port_content h3 {
 	padding-top: 10px;
+	padding-bottom: 10px;
 	font-weight: 600;
 	color: var(--headingColor);
 	font-size: 22px;
@@ -2594,10 +2595,10 @@ footer h2{
    .fourthpage{
 	   width: 82%;
    }
-   .tab{
+   .thirdpagetab,.tab{
 	   height: 30vh;
    }
-   .tablinks{
+   .thirdtablinks,.tablinks{
 	   font-size: 18px;
    }
    .Experience_content{
