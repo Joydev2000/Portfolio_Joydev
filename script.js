@@ -1,3 +1,7 @@
+
+
+
+
 // function locomotiveAnimation() {
 //     gsap.registerPlugin(ScrollTrigger);
   
@@ -242,32 +246,57 @@ function openWork(evt, devlopWork) {
 }
 document.getElementById("thirddefaultOpen").click();
 
+// Initialize Swiper only once
+var swiper;
 
 function openSwiper(overlay, swiperev) {
+  // Ensure the swiperev element is visible before initializing Swiper
+  var swiperevElement = document.getElementById(swiperev);
+  if (!swiperevElement) {
+    console.error('Swiperev element not found');
+    return;
+  }
+
+  swiperevElement.style.display = "block";
+
   document.body.style.overflow = 'hidden';
-  var a, tabcontentSW,
-    tabcontentSW = document.getElementsByClassName("overlaySwiper");
-  for (a = 0; a < tabcontentSW.length; a++) {
+
+  // Hide all elements with class "overlaySwiper"
+  var tabcontentSW = document.getElementsByClassName("overlaySwiper");
+  for (var a = 0; a < tabcontentSW.length; a++) {
     tabcontentSW[a].style.display = "none";
   }
-  document.getElementById(swiperev).style.display = "block";
-  document.getElementById(overlay).style.display = "block";
+
+  // Show the specific swiperev element
+  swiperevElement.style.display = "block";
+
+  // Show the overlay
+  var overlayElement = document.getElementById(overlay);
+  if (!overlayElement) {
+    console.error('Overlay element not found');
+    return;
+  }
+  overlayElement.style.display = "block";
 
   // Add event listener to the overlay element
-  document.getElementById(overlay).addEventListener('click', function () {
+  overlayElement.addEventListener('click', function () {
     // Hide both overlay and overlaySwiper
     document.body.style.overflow = 'auto';
-    document.getElementById(overlay).style.display = "none";
-   
+    overlayElement.style.display = "none";
 
     // Iterate through the collection and hide each element
     for (var a = 0; a < tabcontentSW.length; a++) {
       tabcontentSW[a].style.display = "none";
     }
+
+    // Destroy the existing Swiper instance
+    if (swiper) {
+      swiper.destroy();
+    }
   });
 
-
-  const swiper = new Swiper('.swiper-container', {
+  // Initialize Swiper inside the swiperev element
+  swiper = new Swiper(swiperevElement.querySelector('.swiper-container'), {
     slidesPerView: 1,
     spaceBetween: 20,
     effect: 'fade',
@@ -290,24 +319,22 @@ function openSwiper(overlay, swiperev) {
 
   var modal = document.getElementById('modal');
 
-// global handler
-document.addEventListener('click', function (e) { 
-  if (e.target.className.indexOf('modal-target') !== -1) {
+  // global handler
+  document.addEventListener('click', function (e) {
+    if (e.target.className.indexOf('modal-target') !== -1) {
       var img = e.target;
       var modalImg = document.getElementById("modal-content");
       var captionText = document.getElementById("modal-caption");
       modal.style.display = "block";
       modalImg.src = img.src;
       captionText.innerHTML = img.alt;
-   }
-});
+    }
+  });
 
-var modalClose = document.getElementById('modal-close');
-modalClose.addEventListener('click', function() { 
-  modal.style.display = "none";
-});
-
-
+  var modalClose = document.getElementById('modal-close');
+  modalClose.addEventListener('click', function () {
+    modal.style.display = "none";
+  });
 }
 
 
