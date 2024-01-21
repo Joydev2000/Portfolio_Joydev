@@ -864,6 +864,11 @@ animation: floatp 0.9s ease-in-out;
 	}
 }
 
+.slider-item-content button a{
+	text-decoration: none;
+	color: var(--h_color);
+	transition: .3s ease-in-out;
+}
 
 .slider-item-content button{
 	position: relative;
@@ -878,11 +883,7 @@ animation: floatp 0.9s ease-in-out;
 	z-index: 1;
 	
 
-& a{
-	text-decoration: none;
-	color: var(--h_color);
-	transition: .3s ease-in-out;
-}
+
 &::before{
 	content: "";
 	width: 100%;
