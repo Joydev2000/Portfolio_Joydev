@@ -224,6 +224,8 @@ textAnimation();
 //     // markers: true
 //   },
 // });
+
+
 function openWork(evt, devlopWork) {
   var i, thirdtabcontent, thirdtablinks;
   thirdtabcontent = document.getElementsByClassName("thirdtabcontent");
