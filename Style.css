@@ -2928,9 +2928,9 @@ footer h2{
 }
 @media screen and (max-width:1105px) {
    .home{
-	   height: 100vh;
+	  height: fit-content;
 	   flex-direction: column-reverse;
-	   margin-top: 440px;
+	   /* margin-top: 440px; */
    }
    .container {
 	   width: auto;
@@ -2989,7 +2989,7 @@ footer h2{
 	   font-size: 7.8vw;
    }
    .home{
-	   margin-top: 120px;
+	   /* margin-top: 120px; */
    }
    .containerd{
 	width: 100%;
@@ -3003,18 +3003,18 @@ footer h2{
  }
 @media screen and (max-height: 667px){
 .home {
-   margin-top: 316px;
+   /* margin-top: 316px; */
 }
 }
 @media screen and (min-height: 1368px) and (min-width:912px){
 .home {
   
-   margin-top: 187px;
+   /* margin-top: 187px; */
 }
 }
 @media screen and (max-height: 740px){
    .home {
-	   margin-top: 260px;
+	   /* margin-top: 260px; */
    }
    }
 /* Device Responsive end */
