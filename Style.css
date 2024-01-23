@@ -201,8 +201,13 @@ hr {
 	font-size: 50px;
 	color: #3c3e41;
 	font-weight: 600;
+	line-height: 40px;
 }
-
+.container .hello{
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--h_color);
+}
 .container {
 	width: 600px;
 	overflow: hidden;
@@ -2741,7 +2746,10 @@ footer h2{
 	}
 } */
 @media screen and (max-width: 1000px) {
-	
+	.container h1 {
+		
+		line-height: 28px;
+	}
 	.navbar{
 
 	   display: none;
