@@ -2746,7 +2746,9 @@ footer h2{
 
 	   display: none;
    }
-   
+   .logo h2{
+	padding-left: 0;
+   }
    #open{
 	   display: block;
    }
