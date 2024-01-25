@@ -196,7 +196,7 @@ function textAnimation() {
   
     function textLoad() {
       setTimeout(function() {
-        text.textContent = "Web Developer.";
+        text.textContent = " " + "Web Developer.";
         text.style.color = "#ff014f";
       }, 0);
       setTimeout(function() {
