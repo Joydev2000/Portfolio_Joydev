@@ -435,6 +435,23 @@ $(document).ready(function () {
   });
 });
 
+// $(document).ready(function() {
+//   if ($(window).width() <= 600) {
+//       $(".left").attr("data-aos", "slide-left");
+//   }
+
+//    if($(window).width() <= 600) {
+//       $(".right").attr("data-aos", "slide-right")
+//     }
+   
+  
+// });
+
+$(document).ready(function() {
+  if ($(window).width() <= 715) {
+      $(".left, .right").attr("data-aos-delay", "0");
+  }
+});
 
 
 
