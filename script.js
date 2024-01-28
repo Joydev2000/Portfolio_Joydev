@@ -1,4 +1,45 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector(".toggle");
+  var one = 0;
+ 
+  toggle.addEventListener("change", function(){
+    // event.preventDefault(); 
+    if(one == 0){
+      document.documentElement.style.setProperty('--background', '#212428');
+      document.documentElement.style.setProperty('--boxBackground', 'linear-gradient(145deg, #1e2024, #23272b)');
+      document.documentElement.style.setProperty('--boxshadow', '10px 10px 19px #1c1e22, -10px -10px 19px #262a2e');
+      document.documentElement.style.setProperty('--color', '#c4cfde');
+      document.documentElement.style.setProperty('--headingColor', '#c4cfde');
+      document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(to right bottom, #212428, #16181c);');
 
+      
+      // one.style.backgroundColor = "#212428";
+      console.log("cclicked")
+      one = 1;
+    } 
+    else {
+      document.documentElement.style.setProperty('--background', '#ECF0F3');
+      document.documentElement.style.setProperty('--boxBackground', 'linear-gradient(145deg, #e2e8ec, #ffffff)');
+      document.documentElement.style.setProperty('--boxshadow', '5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff');
+      document.documentElement.style.setProperty('--color', ' #3c3e41');
+      document.documentElement.style.setProperty('--headingColor', '#1E2125');
+      document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(145deg, #ff014f, #d11414)');
+      
+      one = 0; // Reset to 1 when toggling back
+      console.log("cclicked done")
+    }
+  });
+});
+
+gsap.to(".loader", {
+ display:"none",
+  
+  delay: 5,
+  duration: 1,
+  ease: "power2.out"
+
+ 
+});
 
 
 
@@ -52,12 +93,14 @@ function myfunction() {
   var one = document.querySelector(".header");
   var ypos = window.pageYOffset;
  
-
   if (ypos > 150) {
     one.style.position = "sticky";
     one.style.top = "0px";
-    one.style.backgroundColor = "#f4f5f6";
-    one.style.boxShadow = "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff";
+    // Use getComputedStyle to retrieve the computed value of --boxBackground
+    var boxBackground = getComputedStyle(document.documentElement).getPropertyValue('--boxBackground');
+    var boxShadow = getComputedStyle(document.documentElement).getPropertyValue('--boxshadow');
+    one.style.background = boxBackground;
+    one.style.boxShadow = boxShadow;
     one.style.transition = ".5s ease all";
   }
   else {
@@ -66,9 +109,11 @@ function myfunction() {
     one.style.boxShadow = "none";
   }
 }
+
 window.onscroll = function () {
   myfunction();
 };
+
 
 
 function mousemoveEvent(){

@@ -1,223 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle CSS Variable on Click (jQuery)</title>
+    <style>
+        :root {
+            --main-color: blue; /* Define a CSS variable */
+            /* Define another CSS variable for the alternate color */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: var(--main-color); /* Use the CSS variable */
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-<style>
-
-.slider-item-content h1{
-	text-align: left;
-	font-size: 24px;
-	color: var(--headingColor);
-	font-weight: 600;
-	transform: translateY(20px);
-	transition: all .4s ease;
-	transition-delay: .1s;
-	overflow: hidden;
-	max-width: 100%;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-
-
-	@media screen and (max-width: 520px) {
-		& {
-			font-size: 16px;
-			
-		}
-	}
-	
-}
-.slider-item-content h2{
-	transform: translateY(20px);
-	transition: all .4s ease;
-	transition-delay: .2s;
-	margin-top: 5px;
-	text-align: left;
-	font-size: 16px;
-	color: #889DB8;
-	font-weight: 300;
-}
-.slider-item-content h2 span{
-	color: var(--h_color);
-	font-weight: 500;
-	font-size: 18px;
-}
-.slider-item-content p{
-	margin-top: 60px;
-	font-size: 16px;
-	line-height: 24px;
-	color: #889DB8;
-	transform: translateY(20px);
-	transition: all .4s ease;
-	transition-delay: .2s;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
-
-	@media screen and (max-width: 520px) {
-		& {
-			font-size: 14px;
-			line-height: 20px;
-		}
-	}
-
-}
-.slider-item {
-	width: 100%;
-	height: 100%;
-	border-radius: 10px;
-	overflow: hidden;
-	display: flex;
-	flex-direction: row;
-	gap: 30px;
-	flex-shrink: 0;
-	opacity: 0;
-	background: linear-gradient(270deg, rgba(247, 249, 255, 1) 0%, rgba(242, 246, 255, 1) 100%);
-	cursor: grab;
-
-	&-content {
-		padding: 32px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		transition: .4s;
-
-		>* {
-			opacity: 0;
-			transform: translateY(20px);
-		}
-	}
-}
-.slider-item-content{
-	width: 100%;
-	padding: 20px;
-}
-.opverbt{
-display: flex;
-gap: 40px;
-}
-.slider-item-content button{
-	position: relative;
-	margin-top: 100px;
-	padding: 14px 25px;
-	outline: none;
-	border: none;
-	background: var(--boxBackground);
-	box-shadow: var(--boxshadow);
-	border-radius: 10px;
-	font-size: 15px;
-	transition: all .3s ease;
-	z-index: 1;
-
-& a{
-	text-decoration: none;
-	color: var(--h_color);
-	transition: .3s ease-in-out;
-}
-&::before{
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: var(--hBoxBackground);
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-radius: 10px;
-	z-index: -1;
-	opacity: 0;
-	transition: .3s ease-in-out;
-
-}
-&:hover:before{
-	opacity: 1;
-}
-&:hover a{
-	color: whitesmoke;
-}
-&:hover{
-	transform: translateY(-5px);
-}
-
-.swiper-slide-active {
-	.slider-item-content>* {
-		transform: translateY(0px);
-		opacity: 1;
-	}
-}
-}
-
-.slider-buttons {
-	position: absolute;
-	display: flex;
-	top: 88%;
-	justify-content: flex-end;
-	width: 100%;
-	padding-top: 25px;
-	gap: 50px;
-	right: 10px;
-	z-index: 5;
-	
-
-	/* background-color: red; */
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-	font-size: 25px;
-	padding: 25px 50px;
-	border-radius: 5px;
-	background: var(--boxBackground) ;
-	box-shadow: var(--boxshadow);
-	border: none;
-	cursor: pointer;
-	outline: none;
-	color: var(--h_color);
-	position: relative;
-	margin-left: 4px;
-	z-index: 1;
-	transition: all .3s ease-in-out;
-
-
-	&:before {
-		content: '';
-		position: absolute;
-		border-radius: 5px;
-		background: var(--hBoxBackground);
-		height: 100%;
-		width: 100%;
-		left: 0;
-		transition: .5s ease-in-out;
-		opacity: 0;
-		z-index: -1;
-		/* color: black; */
-	}
-
-	&:hover:before {
-		opacity: 1;
-	}
-	&:hover{
-		color: whitesmoke;
-	}
-	&:hover{
-		transform: translateY(-5px);
-	}
-}
-</style>
 <body>
-<div class="slider-item-content">
-						  <h1>Jewellery Shop Visiting Card</h1>
-						  <h2>Softwar Used : <span>Photoshop.</span></h2>
-						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-						  <div class="opverbt">
-							<button><a href="Assect\visiting card_2.jpg" download="">Download IMG</a></button>
-							<button><a href="Assect\visiting card_2.jpg" download="">Download PSD</a></button>
-							</div>
-						 
-						  
-						</div>
+
+    <div class="box"></div>
+    <button>button</button>
+
+    <script>
+        $(document).ready(function() {
+            // Set up a click event handler
+            $('button').click(function() {
+                // Toggle between colors
+                var newColor = ($(':root').css('--main-color') === 'blue') ? 'red' : 'blue';
+
+                // Update the value of the CSS variable
+                $(':root').css('--main-color', newColor);
+            });
+        });
+    </script>
+
 </body>
 </html>
-
-
