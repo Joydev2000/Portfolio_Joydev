@@ -3,30 +3,53 @@ document.addEventListener('DOMContentLoaded', function() {
   var one = 0;
  
   toggle.addEventListener("change", function(){
-    // event.preventDefault(); 
+    
     if(one == 0){
+      one = 1;
       document.documentElement.style.setProperty('--background', '#212428');
       document.documentElement.style.setProperty('--boxBackground', 'linear-gradient(145deg, #1e2024, #23272b)');
       document.documentElement.style.setProperty('--boxshadow', '10px 10px 19px #1c1e22, -10px -10px 19px #262a2e');
-      document.documentElement.style.setProperty('--color', '#c4cfde');
+      document.documentElement.style.setProperty('--color', '#c3cedd');
       document.documentElement.style.setProperty('--headingColor', '#c4cfde');
-      document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(to right bottom, #212428, #16181c);');
-
-      
-      // one.style.backgroundColor = "#212428";
-      console.log("cclicked")
-      one = 1;
+      document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(to right bottom, #212428, #16181c)');
+      document.documentElement.style.setProperty('--timelineAfter', '#17191c');
+      document.documentElement.style.setProperty('--skillbar', 'linear-gradient(145deg, #f02981 0%, #c81901 100%)');
+      document.querySelector(".herocontent").style.background = "linear-gradient(110deg, #1e2024, #23272b)";
+      document.documentElement.style.setProperty('--portfolioTab', 'linear-gradient(-145deg, #1e2024, #23272b)');
+      document.documentElement.style.setProperty('--portfolioTabShadow', '10px 10px 19px #262a2e, -10px -10px 19px #1c1e22');
+      document.documentElement.style.setProperty('--scrollbarBoxshadow', 'inset 0 0 5px rgb(64, 61, 61)');
+      document.documentElement.style.setProperty('--formBackground', 'linear-gradient(110deg, #1e2024, #23272b)');
+      document.documentElement.style.setProperty('--formBorder', '#878e99');
+      document.documentElement.style.setProperty('--nameLebel', '#1F2125');
+      document.documentElement.style.setProperty('--nuberLebel', '#212428');
+      document.documentElement.style.setProperty('--boxIcon', '#ff014f');
+      document.documentElement.style.setProperty('--btspan', '#c3cedd');
+      document.documentElement.style.setProperty('--btspanhover', '#ff014f');
+      document.documentElement.style.setProperty('--hr', '#121415');
     } 
     else {
+      one = 0;
       document.documentElement.style.setProperty('--background', '#ECF0F3');
       document.documentElement.style.setProperty('--boxBackground', 'linear-gradient(145deg, #e2e8ec, #ffffff)');
       document.documentElement.style.setProperty('--boxshadow', '5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff');
       document.documentElement.style.setProperty('--color', ' #3c3e41');
       document.documentElement.style.setProperty('--headingColor', '#1E2125');
       document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(145deg, #ff014f, #d11414)');
-      
-      one = 0; // Reset to 1 when toggling back
-      console.log("cclicked done")
+      document.documentElement.style.setProperty('--timelineAfter', '#d9dee2');
+      document.documentElement.style.setProperty('--skillbar', 'linear-gradient(145deg, #fff 0%,  #ff014f 100%)');
+      document.querySelector(".herocontent").style.background = "linear-gradient(110deg, #e2e8ec, #ffffff)";
+      document.documentElement.style.setProperty('--portfolioTab', 'linear-gradient(-145deg, rgb(226, 232, 236), rgb(255, 255, 255))');
+      document.documentElement.style.setProperty('--portfolioTabShadow', '5px 5px 15px #ffffff, -5px -5px 15px  #D1D9E6');
+      document.documentElement.style.setProperty('--scrollbarBoxshadow', 'inset 0 0 5px rgb(184, 183, 183)');
+      document.documentElement.style.setProperty('--formBackground', 'linear-gradient(110deg, #e2e8ec, #ffffff)');
+      document.documentElement.style.setProperty('--formBorder', '#d2dee7');
+      document.documentElement.style.setProperty('--nameLebel', '#E4EAED');
+      document.documentElement.style.setProperty('--nuberLebel', '#EEF2F4');
+      document.documentElement.style.setProperty('--boxIcon', '#ECF0F3');
+      document.documentElement.style.setProperty('--btspan', '#ff014f');
+      document.documentElement.style.setProperty('--btspanhover', '#3c3e41');
+      document.documentElement.style.setProperty('--hr', '#dce1e4');
+     
     }
   });
 });
