@@ -1455,7 +1455,7 @@ opacity: 1;
 
 .slider-item-content  button a{
 	text-decoration: none;
-	color: var(--h_color);
+	color: var(--btspan);
 	transition: .3s ease-in-out;
 }
 
@@ -1606,7 +1606,7 @@ opacity: 1;
 		content: '';
 		position: absolute;
 		border-radius: 5px;
-		background: var(--hBoxBackground);
+		background: var(--h_color);
 		height: 100%;
 		width: 100%;
 		left: 0;
