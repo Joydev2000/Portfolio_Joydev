@@ -366,13 +366,13 @@ fill: #f82061d9;
 }
 }
 .toggle{
-	position: fixed;
-	top: 90%;
-	right: 5%;
+	position: absolute;
+	top: 11%;
+	right: 2%;
 }
 
 .theme-switch {
-	--toggle-size: 15px;
+	--toggle-size: 10px;
 	/* the size is adjusted using font-size,
 	   this is not transform scale,
 	   so you can choose any size */
@@ -3393,7 +3393,9 @@ footer h2{
 		height: fit-content;
 		
 	} */
-	
+	#Layer_2{
+		width: 85%;
+	}
 	.port_content h3 {
 		padding-bottom: 0px;
 		font-size: 18px;
@@ -3603,7 +3605,7 @@ footer h2{
 	   width: 60%;
 	   
    }
-  .fourthpage,.thirdpage,.secondpage,.home{
+   .fourthpage,.thirdpage,.secondpage,.home{
 	   width: 85%;
    }
    .home_content {
