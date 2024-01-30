@@ -746,7 +746,7 @@ hr {
 
 .container h1 {
 	font-size: 65px;
-	color: var(--color);
+	color: var(--headingColor);
 	font-weight: 600;
 	line-height: 35px;
 	font-family: "Kaushan Script", cursive;
@@ -1162,7 +1162,7 @@ box-shadow: var(--boxshadow);
 }
 
 .box_content h3 {
-	color: var(--color);
+	color: var(--headingColor);
 	font-weight: 500;
 	transition: .2s ease-in-out;
 }
@@ -3278,7 +3278,7 @@ footer h2{
 	text-align: left;
 	margin-top: 30px;
 	text-transform: lowercase;
-	color: var(--color);
+	color: var(--headingColor);
 	
 	
    }
@@ -3304,6 +3304,7 @@ footer h2{
 		/* background: #000; */
 		cursor: pointer;
 		width: fit-content;
+		color: var(--color);
 	}
 	.mobile_nav ul{
 		width: fit-content;
@@ -3343,7 +3344,7 @@ footer h2{
 		margin-top: 150px;
 	}
 	.contact_me h3{
-		color: var(--color);
+		color: var(--headingColor);
 		font-size: 1.7vh;
 		letter-spacing: normal;
 		text-align: left;

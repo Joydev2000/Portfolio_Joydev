@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.documentElement.style.setProperty('--background', '#212428');
       document.documentElement.style.setProperty('--boxBackground', 'linear-gradient(145deg, #1e2024, #23272b)');
       document.documentElement.style.setProperty('--boxshadow', '10px 10px 19px #1c1e22, -10px -10px 19px #262a2e');
-      document.documentElement.style.setProperty('--color', '#c3cedd');
+      document.documentElement.style.setProperty('--color', '#878e99');
       document.documentElement.style.setProperty('--headingColor', '#c4cfde');
       document.documentElement.style.setProperty('--hBoxBackground', 'linear-gradient(to right bottom, #212428, #16181c)');
       document.documentElement.style.setProperty('--timelineAfter', '#17191c');
