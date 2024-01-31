@@ -2135,7 +2135,8 @@ opacity: 1;
 }
 
 .content:hover .heading p {
-	background: var(--h_color);
+	background: var(--hBoxBackground);
+	color: var(--boxIcon);
 	box-shadow: none;
 }
 
