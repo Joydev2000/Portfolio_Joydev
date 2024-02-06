@@ -930,7 +930,7 @@ box-shadow: var(--boxshadow);
 	box-shadow: none;
 }
 
-.icon {
+.icon ul  {
 	position: relative;
 	top: 150px;
 	display: flex;
@@ -939,7 +939,7 @@ box-shadow: var(--boxshadow);
 
 }
 
-.icon i {
+.icon ul a i{
 	font-size: 30px;
 	padding: 6px 13px;
 	border-radius: 10px;
@@ -947,9 +947,10 @@ box-shadow: var(--boxshadow);
 	transition: 0.8s ease;
 	box-shadow: var(--boxshadow);
 	background: var(--boxBackground);
+	display: block;
 }
 
-.icon i:hover {
+.icon ul a i:hover {
 	transform: translateY(-5px);
 }
 
@@ -957,7 +958,7 @@ box-shadow: var(--boxshadow);
 	color: #0A66C2;
 }
 
-.icon .bi-linkedin:hover {
+.icon ul a .bi-linkedin:hover {
 	background: #0A66C2;
 	color: #e2e8ec;
 }
@@ -984,12 +985,12 @@ box-shadow: var(--boxshadow);
 	color: #00acee;
 }
 
-.icon .bi-twitter:hover {
+.icon ul a .bi-twitter:hover {
 	background: #00acee;
 	color: #e2e8ec;
 }
 
-.icon i:nth-child(n+2) {
+.icon ul a:nth-child(n+2) {
 	margin-left: 40px;
 
 }

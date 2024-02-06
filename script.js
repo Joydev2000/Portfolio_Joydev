@@ -63,6 +63,77 @@ gsap.to(".loader", {
 
  
 });
+var tl = gsap.timeline();
+tl.from(".logo",{
+  x: -100,
+  opacity:0,
+  duration :1,
+  ease: "power2.out"
+})
+tl.from(".navbar ul a",{
+  y : 50,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+  stagger: 0.2
+})
+tl.from(".container",{
+  y : 60,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+
+})
+tl.from(".text_con p ",{
+  y :50,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+})
+
+
+var tltwo = gsap.timeline();
+tltwo.from(".image_content",{
+ scale:0,
+ delay:.8,
+  opacity:0,
+  duration :1,
+  ease: "power2.out",
+  stagger: 0.3
+})
+tltwo.from(".my_image",{
+  scale:0,
+   opacity:0,
+   duration :1,
+   ease: "power2.out",
+   stagger: 0.3
+ })
+ tltwo.from(".frames .frame",{
+  y :50,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+  stagger: 0.3
+})
+tltwo.from(".icon ul a",{
+  y :50,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+  stagger: 0.3
+})
+tltwo.from(".toggle",{
+  y:50,
+   opacity:0,
+   duration :1,
+   ease: "power2.out",
+   stagger: 0.3
+ })
+
+ 
+
+
+
 
 
 
