@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 gsap.to(".loader", {
  display:"none",
-  
   delay: 5,
   duration: 1,
   ease: "power2.out"
@@ -64,8 +63,15 @@ gsap.to(".loader", {
  
 });
 var tl = gsap.timeline();
-tl.from(".logo",{
+tl.from("#logo",{
   x: -100,
+  opacity:0,
+  duration :1,
+  ease: "power2.out"
+})
+var tl = gsap.timeline();
+tl.from("#open",{
+  x: 100,
   opacity:0,
   duration :1,
   ease: "power2.out"
@@ -94,19 +100,21 @@ tl.from(".text_con p ",{
 
 var tltwo = gsap.timeline();
 tltwo.from(".image_content",{
- scale:0,
+  y :200,
+//  scale:0,
  delay:.8,
   opacity:0,
   duration :1,
   ease: "power2.out",
-  stagger: 0.3
+  // stagger: 0.3
 })
 tltwo.from(".my_image",{
-  scale:0,
+  y :-200,
+  // scale:0,
    opacity:0,
    duration :1,
    ease: "power2.out",
-   stagger: 0.3
+  //  stagger: 0.3
  })
  tltwo.from(".frames .frame",{
   y :50,
