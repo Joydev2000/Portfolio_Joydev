@@ -3402,6 +3402,7 @@ footer h2{
 		height: fit-content;
 		
 	} */
+	
 	#Layer_2{
 		width: 85%;
 	}
@@ -3657,6 +3658,11 @@ footer h2{
 	}
   }
 @media screen and (max-width:1105px) {
+	.icon ul {
+		
+		top: 80px;
+		
+	}
    .home{
 	  height: fit-content;
 	   flex-direction: column-reverse;
@@ -3693,9 +3699,9 @@ footer h2{
 	   font-size: 40px;
 	   top: 15px;
    }
-   .icon {
+   /* .icon {
 	   top: 70px;
-   }
+   } */
    #cursor{
 	   display: none;
    }
