@@ -1471,6 +1471,7 @@ opacity: 1;
 	font-size: 15px;
 	transition: all 0.3s ease;
 	z-index: 1;
+	cursor: pointer;
   }
   
   .slider-item-content button::before {
@@ -3512,6 +3513,7 @@ footer h2{
 	padding: 10px;
    }
    .slider-item-content button{
+	cursor: pointer;
 	padding: 5% 5%;
    }
 

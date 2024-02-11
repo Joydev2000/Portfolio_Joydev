@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 gsap.to(".loader", {
  display:"none",
   delay: 5,
+  opacity:0,
   duration: 1,
   ease: "power2.out"
 
