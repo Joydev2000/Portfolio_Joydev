@@ -54,36 +54,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-gsap.to(".loader", {
- display:"none",
-  delay: 5,
-  opacity:0,
-  duration: 1,
-  ease: "power2.out"
 
- 
-});
 var tl = gsap.timeline();
+tl.to(".loader", {
+  display:"none",
+   delay: 5,
+   opacity:0,
+   duration: 1,
+   ease: "power2.out"
+ 
+  
+ });
 tl.from("#logo",{
   x: -100,
   opacity:0,
   duration :1,
   ease: "power2.out"
 })
-var tl = gsap.timeline();
+
 tl.from("#open",{
   x: 100,
   opacity:0,
   duration :1,
   ease: "power2.out"
 })
-tl.from(".navbar ul a",{
-  y : 50,
-  opacity:0,
-  duration :.8,
-  ease: "power2.out",
-  stagger: 0.2
-})
+
 tl.from(".container",{
   y : 60,
   opacity:0,
@@ -103,7 +98,7 @@ var tltwo = gsap.timeline();
 tltwo.from(".image_content",{
   y :200,
 //  scale:0,
- delay:.8,
+ delay:5.1,
   opacity:0,
   duration :1,
   ease: "power2.out",
@@ -117,6 +112,13 @@ tltwo.from(".my_image",{
    ease: "power2.out",
   //  stagger: 0.3
  })
+ tltwo.from(".navbar ul a",{
+  y : 50,
+  opacity:0,
+  duration :.8,
+  ease: "power2.out",
+  stagger: 0.2
+})
  tltwo.from(".frames .frame",{
   y :50,
   opacity:0,
