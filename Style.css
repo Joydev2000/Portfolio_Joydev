@@ -360,9 +360,11 @@ animation: draw 5s ease-in-out forwards 3.5;
 @keyframes fillw {
 from{
 fill: transparent;
+overflow-y: hidden;
 }
 to{
 fill: #f82061d9;
+overflow-y: auto;
 }
 }
 .toggle{
