@@ -199,7 +199,7 @@ function myfunction() {
   var ypos = window.pageYOffset;
  
   if (ypos > 150) {
-    one.style.position = "sticky";
+    one.style.position = "fixed";
     one.style.top = "0px";
     // Use getComputedStyle to retrieve the computed value of --boxBackground
     var boxBackground = getComputedStyle(document.documentElement).getPropertyValue('--boxBackground');
@@ -207,6 +207,7 @@ function myfunction() {
     one.style.background = boxBackground;
     one.style.boxShadow = boxShadow;
     one.style.transition = ".5s ease all";
+    console.log("hjigggg")
   }
   else {
     one.style.position = "relative";
