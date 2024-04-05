@@ -584,17 +584,17 @@ $(document).ready(function () {
   var newwList = $(".new");
   open.click(function () {
     menu.css({ "transform": "translateX(0px)", "transition": "1s ease" });
-    $("body").css("overflow", "hidden");
+    $(document.documentElement).css({"overflow": "hidden"});
   });
 
   close.click(function () {
     menu.css({ "transform": "translateX(100%)", "transition": "1s ease" });
-    $("body").css("overflow", "auto");
+    $(document.documentElement).css({"overflow": "auto"});
   });
 
   newwList.click(function () {
     menu.css({ "transform": "translateX(100%)", "transition": ".5s ease" });
-    $("body").css("overflow", "auto");
+    $(document.documentElement).css({"overflow": "auto"});
   });
 });
 
