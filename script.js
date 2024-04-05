@@ -53,7 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+function disableScroll() {
+ 
+  // document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
 
+  
+  setTimeout(function() {
+    // document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }, 6000);
+}
+
+window.onload = disableScroll();
 
 var tl = gsap.timeline();
 tl.to(".loader", {
@@ -103,7 +115,7 @@ tltwo.from(".image_content",{
   duration :1,
   ease: "power2.out",
   // stagger: 0.3
-})
+},)
 tltwo.from(".my_image",{
   y :-200,
   // scale:0,
@@ -111,21 +123,21 @@ tltwo.from(".my_image",{
    duration :1,
    ease: "power2.out",
   //  stagger: 0.3
- })
+ },)
  tltwo.from(".navbar ul a",{
   y : 50,
   opacity:0,
   duration :.8,
   ease: "power2.out",
   stagger: 0.2
-})
+},"a")
  tltwo.from(".frames .frame",{
   y :50,
   opacity:0,
   duration :.8,
   ease: "power2.out",
   stagger: 0.3
-})
+},"a")
 tltwo.from(".icon ul a",{
   y :50,
   opacity:0,
