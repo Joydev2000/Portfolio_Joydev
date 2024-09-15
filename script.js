@@ -617,7 +617,23 @@ $(document).ready(function() {
 });
 
 
+const lenis = new Lenis(
+  {
+    smoothWheel: true,
+    wheelMultiplier: 0.6 // Adjust this value to change the scrolling speed
+  }
+)
 
+// lenis.on('scroll', (e) => {
+//   console.log(e)
+// })
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf);
 
 
 
