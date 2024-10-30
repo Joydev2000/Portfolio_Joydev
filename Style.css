@@ -2177,6 +2177,7 @@ opacity: 1;
 	color: var(--color);
 	padding-top: 2vh;
 	transition: .5s ease all;
+	text-transform: capitalize;
 }
 
 .content:hover h2,
